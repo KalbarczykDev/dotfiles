@@ -1,0 +1,46 @@
+# macOS Finder cruft
+.DS_Store
+**/.DS_Store
+
+# Shell session/histories
+.zsh_history
+.zsh_sessions/
+.zcompdump
+.zshrc.save
+.zprofile.pysave
+
+# Secrets
+.npmrc
+.ssh/
+**/hosts.yml        
+**/.netrc
+**/auth.json
+
+# Git local settings
+.gitconfig.local
+.git-credentials
+
+# Editor backup files
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Logs
+*.log
+
+# VSCode settings
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Node modules 
+node_modules/
+
+# JetBrains IDEs
+.idea/
+

@@ -1,0 +1,5 @@
+\.git
+misc
+#LICENSE
+^/.*\.orig
+.DS_Store
