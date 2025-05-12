@@ -1,5 +1,6 @@
 vim.diagnostic.config {
-  virtual_text = true,
+  virtual_text = false, --needs to be false when using virtual lines
+  virtual_lines = true,
   signs = {
     text = {
       [vim.diagnostic.severity.ERROR] = "",

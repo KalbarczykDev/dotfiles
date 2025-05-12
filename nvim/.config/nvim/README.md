@@ -5,13 +5,12 @@
 1. JS/TS debugger
 2. C#,php bash support
 3. Lua debugger
-4. (optional) Unity engine support
-5. (optional) Kotlin support
 
 # TOFIX
 
 1. Java inlay hints don't show automatically
 2. DAP UI don't toggle off after leaving debugger
+3. Python debugger is not loading libraries
 
 # Credits
 
