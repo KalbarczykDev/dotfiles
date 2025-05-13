@@ -14,8 +14,8 @@ config.window_close_confirmation = "NeverPrompt"
 config.hide_mouse_cursor_when_typing = true
 
 --window opacity
-config.window_background_opacity = 0.8
-config.text_background_opacity = 0.8
+config.window_background_opacity = 1
+config.text_background_opacity = 1
 config.macos_window_background_blur = 20
 
 --theme
