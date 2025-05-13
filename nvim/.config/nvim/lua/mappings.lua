@@ -2,7 +2,7 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 local dap = require "dap"
-local cmp = require "cmp"
+
 local dapui = require "dapui"
 local telescope = require "telescope.builtin"
 local luasnip = require "luasnip"
@@ -39,13 +39,6 @@ map("n", "<Leader>di", dap.step_into, { desc = "DAP Step Into" })
 map("n", "<Leader>dO", dap.step_out, { desc = "DAP Step Out" })
 map("n", "<Leader>dr", dap.repl.toggle, { desc = "DAP Toggle REPL" })
 map("n", "<Leader>du", dapui.toggle, { desc = "DAP UI Toggle" })
--- cmp setup
-cmp.setup {
-  mapping = {
-    ["<Down>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
-    ["<Up>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
-  },
-}
 
 -- spell checker
 vim.keymap.set("n", "<leader>ss", function()
