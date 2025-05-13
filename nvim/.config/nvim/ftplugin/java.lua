@@ -22,7 +22,18 @@ else
   print("Unknown OS: " .. os_name)
 end
 
+local on_attach = function(client, bufnr)
+  if vim.lsp.inlay_hint and type(vim.lsp.inlay_hint.enable) == "function" then
+    vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+  end
+  if client.server_capabilities.codeLensProvider then
+    vim.lsp.codelens.refresh()
+  end
+end
 local config = {
+
+  on_attach = on_attach,
+
   cmd = {
     "java",
     "-Declipse.application=org.eclipse.jdt.ls.core.id1",

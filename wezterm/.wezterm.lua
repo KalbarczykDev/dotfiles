@@ -14,8 +14,8 @@ config.window_close_confirmation = "NeverPrompt"
 config.hide_mouse_cursor_when_typing = true
 
 --window opacity
-config.window_background_opacity = 1
-config.text_background_opacity = 1
+config.window_background_opacity = 0.8
+config.text_background_opacity = 0.8
 config.macos_window_background_blur = 20
 
 --theme
@@ -23,41 +23,41 @@ config.color_scheme = "Tokyo Night"
 
 -- Keybindings
 config.keys = {
-	{
-		key = "e",
-		mods = "CTRL",
-		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
-	},
-	{
-		key = "d",
-		mods = "CTRL",
-		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-	},
-	{
-		key = "w",
-		mods = "CTRL",
-		action = wezterm.action.CloseCurrentPane({ confirm = true }),
-	},
-	{
-		key = "h",
-		mods = "CTRL",
-		action = wezterm.action.ActivatePaneDirection("Left"),
-	},
-	{
-		key = "l",
-		mods = "CTRL",
-		action = wezterm.action.ActivatePaneDirection("Right"),
-	},
-	{
-		key = "j",
-		mods = "CTRL",
-		action = wezterm.action.ActivatePaneDirection("Up"),
-	},
-	{
-		key = "k",
-		mods = "CTRL",
-		action = wezterm.action.ActivatePaneDirection("Down"),
-	},
+  {
+    key = "e",
+    mods = "CTRL",
+    action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+  },
+  {
+    key = "d",
+    mods = "CTRL",
+    action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+  },
+  {
+    key = "w",
+    mods = "CTRL",
+    action = wezterm.action.CloseCurrentPane({ confirm = true }),
+  },
+  {
+    key = "h",
+    mods = "CTRL",
+    action = wezterm.action.ActivatePaneDirection("Left"),
+  },
+  {
+    key = "l",
+    mods = "CTRL",
+    action = wezterm.action.ActivatePaneDirection("Right"),
+  },
+  {
+    key = "j",
+    mods = "CTRL",
+    action = wezterm.action.ActivatePaneDirection("Up"),
+  },
+  {
+    key = "k",
+    mods = "CTRL",
+    action = wezterm.action.ActivatePaneDirection("Down"),
+  },
 }
 
 --autostart

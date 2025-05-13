@@ -11,6 +11,7 @@
 2. DAP UI don't toggle off after leaving debugger
 3. Python debugger is not loading libraries
 4. When using del button or typing cursor goes to menu
+5. Nvtree is acward currently
 
 # Credits
 

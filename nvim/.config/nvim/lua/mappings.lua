@@ -5,7 +5,6 @@ local dap = require "dap"
 local cmp = require "cmp"
 local dapui = require "dapui"
 local telescope = require "telescope.builtin"
-local ufo = require "ufo"
 local luasnip = require "luasnip"
 
 --editor modes
