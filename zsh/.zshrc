@@ -1,3 +1,13 @@
+# Detect OS
+OS="$(uname)"
+
+# Homebrew
+if [ "$OS" = "Darwin" ]; then
+  export PATH="/opt/homebrew/bin:$PATH"
+elif [ "$OS" = "Linux" ] && [ -d "/home/linuxbrew/.linuxbrew/bin" ]; then
+  export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+fi
+
 #zsh
 alias cls=clear
 alias reload="source ~/.zshrc"
@@ -9,8 +19,7 @@ alias wez="nvim ~/.wezterm.lua"
 #neofetch
 alias sysinfo="clear && neofetch"
 
-#Homebrew
-export PATH="/opt/homebrew/bin:$PATH"
+
 
 
 #starship prompt
@@ -38,9 +47,13 @@ alias py=python3
 alias pip=pip3
 
 
-#Java
-export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH=$JAVA_HOME/bin:$PATH
+# Java
+if [ "$OS" = "Darwin" ]; then
+  export JAVA_HOME=$(/usr/libexec/java_home)
+elif [ "$OS" = "Linux" ] && [ -d "/usr/lib/jvm" ]; then
+  export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which javac))))
+fi
+export PATH="$JAVA_HOME/bin:$PATH"
 
 
 #Git
@@ -52,9 +65,20 @@ alias gl="git log --oneline --graph --decorate"
 alias gb="git branch"
 alias gd="git diff"
 
-# Autosuggestions
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Zsh Autosuggestions
+if [ -f "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+  source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+elif [ -f "/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+  source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+elif [ -f "$HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+  source "$HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
 
-# Syntax highlighting (must be last)
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+# Zsh Syntax Highlighting (must be last)
+if [ -f "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [ -f "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [ -f "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+  source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
