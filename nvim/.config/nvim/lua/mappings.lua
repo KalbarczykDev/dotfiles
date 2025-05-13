@@ -48,30 +48,6 @@ cmp.setup {
   },
 }
 
--- Keymaps for folding
-
--- Peek fold under cursor
-map("n", "zp", function()
-  local winid = ufo.peekFoldedLinesUnderCursor()
-  if not winid then
-    vim.cmd "normal! za"
-  end
-end, { desc = "UFO Peek or Toggle Fold" })
-
--- Open all folds
-map("n", "zR", ufo.openAllFolds, { desc = "UFO Open All Folds" })
-
--- Close all folds
-map("n", "zM", ufo.closeAllFolds, { desc = "UFO Close All Folds" })
-
--- Open folds except certain kinds (like comments)
-map("n", "zr", ufo.openFoldsExceptKinds, { desc = "UFO Open Folds Except Kinds" })
-
--- Close folds with level
-map("n", "zm", function()
-  ufo.closeFoldsWith() -- Folds with minimum fold level
-end, { desc = "UFO Close Folds with Level" })
-
 -- spell checker
 vim.keymap.set("n", "<leader>ss", function()
   require("telescope.builtin").spell_suggest(require("telescope.themes").get_dropdown {})

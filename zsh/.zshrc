@@ -34,10 +34,9 @@ eval "$(starship init zsh)"
 
 
 #Vim /Nvim
-alias vim=lvim
-alias vi=lvim
-alias v=lvim
-alias lv=lvim
+alias vim=nvim
+alias vi=nvim
+alias v=nvim
 alias nv=nvim 
 
 #config nvim

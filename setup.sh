@@ -50,12 +50,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-au
 echo "Installing zsh-syntax-highlighting..."
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/plugins/zsh-syntax-highlighting
 
-echo "Installing lazygit..."
-LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
-curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-tar xf lazygit.tar.gz lazygit
-sudo install lazygit /usr/local/bin
-rm lazygit lazygit.tar.gz
+
 
 echo "Installing WezTerm..."
 curl -LO https://github.com/wez/wezterm/releases/latest/download/wezterm-ubuntu20.04.deb
@@ -82,11 +77,6 @@ rm JetBrainsMono.zip
 
 # Rebuild font cache
 fc-cache -fv
-
-
-echo "Installing LunarVim..."
-bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/master/utils/installer/install.sh) --yes
-
 
 #Applications
 
