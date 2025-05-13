@@ -20,6 +20,12 @@ alias wez="nvim ~/.wezterm.lua"
 alias sysinfo="clear && neofetch"
 
 
+#cargo (rust)
+export PATH="$HOME/.cargo/bin:$PATH"
+
+#lunarvim
+
+export PATH="$HOME/.local/bin/":$PATH
 
 
 #starship prompt
@@ -28,10 +34,11 @@ eval "$(starship init zsh)"
 
 
 #Vim /Nvim
-alias vim=nvim
-alias vi=nvim
-alias vimdiff="nvim -d"
-alias nv="nvim"
+alias vim=lvim
+alias vi=lvim
+alias v=lvim
+alias lv=lvim
+alias nv=nvim 
 
 #config nvim
 alias gvc="cd ~/.config/nvim"

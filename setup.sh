@@ -71,6 +71,23 @@ for dir in *; do
   [ -d "$dir" ] && stow "$dir"
 done
 
+echo "Installing JetBrainsMono Nerd Font..."
+FONT_DIR="$HOME/.local/share/fonts"
+mkdir -p "$FONT_DIR"
+
+# Download and extract only JetBrainsMonoNL Nerd Font
+curl -Lo JetBrainsMono.zip "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip"
+unzip -o JetBrainsMono.zip -d "$FONT_DIR"
+rm JetBrainsMono.zip
+
+# Rebuild font cache
+fc-cache -fv
+
+
+echo "Installing LunarVim..."
+bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/master/utils/installer/install.sh) --yes
+
+
 #Applications
 
 echo "Installing Discord..."
