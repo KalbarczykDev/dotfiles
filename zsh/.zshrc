@@ -1,11 +1,56 @@
+#zsh
+alias cls=clear
+alias reload="source ~/.zshrc"
+alias zsh="nvim ~/.zshrc"
 
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
-plugins=(git)
+#wezterm
+alias wez="nvim ~/.wezterm.lua"
 
-source $ZSH/oh-my-zsh.sh
+#neofetch
+alias sysinfo="clear && neofetch"
 
-[[ -f ~/.zshrc_custom ]] && source ~/.zshrc_custom
+#Homebrew
+export PATH="/opt/homebrew/bin:$PATH"
+
+
+#starship prompt
+
+eval "$(starship init zsh)"
+
+
+#Vim /Nvim
+alias vim=nvim
+alias vi=nvim
+alias vimdiff="nvim -d"
+alias nv="nvim"
+
+#config nvim
+alias gvc="cd ~/.config/nvim"
+
+export EDITOR=nvim
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#Python 
+alias python=python3
+alias py=python3
+alias pip=pip3
+
+
+#Java
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=$JAVA_HOME/bin:$PATH
+
+
+#Git
+alias gs="git status"
+alias ga="git add ."
+alias gc="git commit -m"
+alias gp="git push"
+alias gl="git log --oneline --graph --decorate"
+alias gb="git branch"
+alias gd="git diff"
 
 # Autosuggestions
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
