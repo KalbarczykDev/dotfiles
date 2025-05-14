@@ -8,6 +8,9 @@ elif [ "$OS" = "Linux" ] && [ -d "/home/linuxbrew/.linuxbrew/bin" ]; then
   export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 fi
 
+#dotfiles 
+alias dot="cd ~/.dotfiles"
+
 #zsh
 alias cls=clear
 alias reload="source ~/.zshrc"
@@ -32,6 +35,11 @@ export PATH="$HOME/.local/bin/":$PATH
 
 eval "$(starship init zsh)"
 
+# node
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+export PATH="$(npm bin -g):$PATH"
 
 #Vim /Nvim
 alias vim=nvim
@@ -41,8 +49,7 @@ alias nv=nvim
 
 #config nvim
 alias gvc="cd ~/.config/nvim"
-#config lunarvim
-alias glc="cd ~/.config/lvim"
+alias vc="nvim ~/.config/nvim"
 
 export EDITOR=nvim
 export NVM_DIR="$HOME/.nvm"
