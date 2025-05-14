@@ -2,7 +2,7 @@ return {
   {
     "williamboman/mason.nvim",
     config = function()
-      require("configs.mason")
-    end 
+      require "configs.mason"
+    end,
   },
 }

@@ -34,4 +34,4 @@ function M.setup()
   nvimtree.setup(vim.tbl_deep_extend("force", default, opts))
 end
 
-M.setup()
+return M
