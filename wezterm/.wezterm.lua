@@ -14,12 +14,12 @@ config.window_close_confirmation = "NeverPrompt"
 config.hide_mouse_cursor_when_typing = true
 
 --window opacity
-config.window_background_opacity = 0.8
-config.text_background_opacity = 0.5
+config.window_background_opacity = 0.7
+config.text_background_opacity = 0.7
 config.macos_window_background_blur = 20
 
 --theme
-config.color_scheme = "Tokyo Night"
+config.color_scheme = "Catppuccin Mocha"
 
 -- Keybindings
 config.keys = {
@@ -57,6 +57,16 @@ config.keys = {
     key = "k",
     mods = "CTRL",
     action = wezterm.action.ActivatePaneDirection("Down"),
+  },
+  {
+    key = "t",
+    mods = "CMD",
+    action = wezterm.action.SpawnWindow,
+  },
+  {
+    key = "T",
+    mods = "CMD",
+    action = wezterm.action.SpawnTab("CurrentPaneDomain"),
   },
 }
 
