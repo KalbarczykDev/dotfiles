@@ -49,7 +49,7 @@ alias nv=nvim
 
 #config nvim
 alias gvc="cd ~/.config/nvim"
-alias vc="nvim ~/.config/nvim"
+
 
 export EDITOR=nvim
 export NVM_DIR="$HOME/.nvm"
