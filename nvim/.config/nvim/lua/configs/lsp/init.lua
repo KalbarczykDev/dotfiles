@@ -1,13 +1,21 @@
+local severity_icons = {
+  [vim.diagnostic.severity.ERROR] = "",
+  [vim.diagnostic.severity.WARN] = "",
+  [vim.diagnostic.severity.HINT] = "",
+  [vim.diagnostic.severity.INFO] = "",
+}
+
 vim.diagnostic.config {
   virtual_text = false, --needs to be false when using virtual lines
-  virtual_lines = true,
+  virtual_lines = {
+    current_line = false,
+    format = function(diagnostic)
+      local icon = severity_icons[diagnostic.severity] or ""
+      return icon .. " " .. diagnostic.message
+    end,
+  },
   signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = "",
-      [vim.diagnostic.severity.WARN] = "",
-      [vim.diagnostic.severity.HINT] = "",
-      [vim.diagnostic.severity.INFO] = "",
-    },
+    text = severity_icons,
   },
   underline = true,
   update_in_insert = true,
