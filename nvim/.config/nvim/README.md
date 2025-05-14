@@ -3,7 +3,4 @@
 # TODO:
 
 1. JS/TS debugger
-
-# Credits
-
-1. NvChad ~ This config is based on the amazing work of NvChad team learn more about them https://nvchad.com/
+2. refactor plugin configs to use the module style (eg. chadrc.lua)
