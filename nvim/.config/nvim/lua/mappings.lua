@@ -46,7 +46,7 @@ M.setup = function()
   end, { desc = "Telescope Spell Suggest" })
 
   --Noice
-  map("n", "<Esc><Esc>", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice messages", silent = true })
+  map("n", "<leader>nn", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice messages", silent = true })
 end
 
 return M
