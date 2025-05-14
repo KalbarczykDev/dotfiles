@@ -24,9 +24,9 @@ require("mason-tool-installer").setup {
     "google-java-format",         -- Java
 
     -- Linters
-    "ruff",       --Python
-    "mypy",       -- Python
-    "eslint_lsp", -- JS/TS
+    "ruff",     --Python
+    "mypy",     -- Python
+    "eslint_d", -- JS/TS
 
     -- Debuggers
     "codelldb",           -- C/C++
