@@ -46,7 +46,9 @@ M.setup = function()
   end, { desc = "Telescope Spell Suggest" })
 
   --Noice
-  map("n", "<leader>nn", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice messages", silent = true })
+  map("n", "<C-\\>", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice messages", silent = true })
+  --other
+  map("v", "<D-c>", '"+y', { desc = "Copy to system clipboard (⌘+C)", noremap = true, silent = true })
 end
 
 return M
