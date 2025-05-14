@@ -16,6 +16,9 @@ function M.setup()
       { name = "buffer" },
       { name = "path" },
     },
+    experimental = {
+      ghost_text = true,
+    },
   }))
 end
 
