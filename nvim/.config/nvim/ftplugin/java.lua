@@ -29,12 +29,6 @@ local on_attach = function(client, bufnr)
   if client.server_capabilities.codeLensProvider then
     vim.lsp.codelens.refresh()
   end
-
-  client.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-    border = "none",
-    silent = true,
-    focusable = false,
-  })
 end
 local config = {
 
