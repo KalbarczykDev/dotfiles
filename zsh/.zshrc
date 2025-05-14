@@ -11,6 +11,9 @@ fi
 #dotfiles 
 alias dot="cd ~/.dotfiles"
 
+#misc
+alias lah="ls -lah"
+
 #zsh
 alias cls=clear
 alias reload="source ~/.zshrc"
@@ -60,6 +63,15 @@ export NVM_DIR="$HOME/.nvm"
 alias python=python3
 alias py=python3
 alias pip=pip3
+
+venvm() {
+  local dir="${1:-.venv}"
+  if [ -f "$dir/bin/activate" ]; then
+    source "$dir/bin/activate"
+  else
+    echo "No virtual environment found at '$dir'"
+  fi
+}
 
 
 # Java

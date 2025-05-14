@@ -12,6 +12,7 @@ sudo apt install -y \
   git \
   gradle \
   grep \
+  gotop \
   make \
   maven \
   neofetch \
