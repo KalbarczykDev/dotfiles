@@ -35,7 +35,6 @@ M.nvdash = {
   },
 }
 M.ui = {
-  theme = "catppuccin",
   tabufline = {
     lazyload = false,
   },
