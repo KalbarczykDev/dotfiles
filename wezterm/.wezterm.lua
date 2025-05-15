@@ -59,11 +59,6 @@ config.keys = {
     action = wezterm.action.ActivatePaneDirection("Down"),
   },
   {
-    key = "T",
-    mods = "CMD",
-    action = wezterm.action.SpawnWindow,
-  },
-  {
     key = "t",
     mods = "CMD",
     action = wezterm.action.SpawnTab("CurrentPaneDomain"),
