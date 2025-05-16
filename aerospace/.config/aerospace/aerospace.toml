@@ -65,6 +65,15 @@ automatically-unhide-macos-hidden-apps = true
     outer.top =        48
     outer.right =      8
 
+[workspace-to-monitor-force-assignment]
+    1 = 'main'
+    2 = 'secondary'
+    3 = 'main'
+    4 = 'main'
+    5 = 'secondary'
+    6 = 'secondary'
+
+
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
