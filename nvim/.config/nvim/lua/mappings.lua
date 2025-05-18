@@ -6,6 +6,7 @@ M.setup = function()
   local dap = require "dap"
 
   local dapui = require "dapui"
+
   local telescope = require "telescope.builtin"
   --editor modes
   map("n", ";", ":", { desc = "CMD enter command mode" })
@@ -47,7 +48,12 @@ M.setup = function()
 
   --Noice
   map("n", "<C-\\>", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice messages", silent = true })
-  --other
+
+  --Minty
+  map("n", "<Leader>sh", "<cmd>Shades<CR>", { desc = "Minty Shades" })
+  map("n", "<Leader>hu", "<cmd>Huefy<CR>", { desc = "Minty Huefy" })
+
+  --Copy
   map("v", "<D-c>", '"+y', { desc = "Copy to system clipboard (⌘+C)", noremap = true, silent = true })
 end
 
