@@ -6,10 +6,6 @@ M.setup = function()
   local dap = require "dap"
 
   local dapui = require "dapui"
-  --editor modes
-  map("n", ";", ":", { desc = "CMD enter command mode" })
-  map("i", "jk", "<ESC>", { desc = "Exit insert mode" })
-
   --lsp
   map("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "LSP Hover (Saga)" })
   map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename (Telescope UI if dressing.nvim)" })
@@ -56,9 +52,6 @@ M.setup = function()
   --Minty
   map("n", "<Leader>sh", "<cmd>Shades<CR>", { desc = "Minty Shades" })
   map("n", "<Leader>hu", "<cmd>Huefy<CR>", { desc = "Minty Huefy" })
-
-  --Copy
-  map("v", "<D-c>", '"+y', { desc = "Copy to system clipboard (⌘+C)", noremap = true, silent = true })
 end
 
 return M

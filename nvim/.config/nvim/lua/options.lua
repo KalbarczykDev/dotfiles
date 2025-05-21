@@ -14,6 +14,7 @@ vim.opt.clipboard = "unnamedplus"
 -- UI
 vim.opt.swapfile = false
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.background = "dark"
 vim.g.tokyonight_transparent = true
 

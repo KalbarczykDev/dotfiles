@@ -23,10 +23,10 @@ vim.diagnostic.config {
 }
 
 vim.cmd [[
-  highlight DiagnosticError guifg=#f7768e
-  highlight DiagnosticWarn guifg=#e0af68
-  highlight DiagnosticInfo guifg=#7aa2f7
-  highlight DiagnosticHint guifg=#9d7cd8
+  highlight DiagnosticError guifg=#f38ba8
+  highlight DiagnosticWarn guifg=#fab387
+  highlight DiagnosticInfo guifg=#89b4fa
+  highlight DiagnosticHint guifg=#cba6f7
 ]]
 
 local servers = {
