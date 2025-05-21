@@ -66,5 +66,5 @@ esac
 #
 # echo "WEATHER CODE $WEATHER_CODE"
 
-sketchybar --set $NAME label="$LOCATION  $TEMPERATURE糖 $WEATHER_DESCRIPTION"
+sketchybar --set $NAME label="$LOCATION  $TEMPERATURE°C $WEATHER_DESCRIPTION"
 sketchybar --set $NAME.moon icon=$ICON

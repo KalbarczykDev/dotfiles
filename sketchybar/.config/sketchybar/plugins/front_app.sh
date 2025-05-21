@@ -21,7 +21,7 @@ case $INFO in
     ICON=󰜏
     ;;
   *)
-    ICON=󰘔
+    ICON=
     ;;
 esac
 
