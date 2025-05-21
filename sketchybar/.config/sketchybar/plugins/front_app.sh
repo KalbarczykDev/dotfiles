@@ -1,71 +1,27 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
-ICON_PADDING_RIGHT=5
+ICON_PADDING_RIGHT=10
 
 case $INFO in
-"Arc")
-    ICON_PADDING_RIGHT=5
-    ICON=󰞍
-    ;;
-"Code")
-    ICON_PADDING_RIGHT=4
-    ICON=󰨞
-    ;;
-"Calendar")
-    ICON_PADDING_RIGHT=3
-    ICON=
-    ;;
-"Discord")
+ 
+  "Discord")
     ICON=
     ;;
-"FaceTime")
-    ICON_PADDING_RIGHT=5
-    ICON=
-    ;;
-"Finder")
+ 
+  "Finder")
     ICON=󰀶
-    ;;
-"Google Chrome")
-    ICON_PADDING_RIGHT=7
-    ICON=
-    ;;
-"IINA")
-    ICON_PADDING_RIGHT=4
-    ICON=󰕼
-    ;;
-"kitty")
-    ICON=󰄛
-    ;;
-"Messages")
-    ICON=
-    ;;
-"Notion")
-    ICON_PADDING_RIGHT=6
-    ICON=󰎚
-    ;;
-"Preview")
-    ICON_PADDING_RIGHT=3
-    ICON=
-    ;;
-"PS Remote Play")
-    ICON_PADDING_RIGHT=3
-    ICON=
-    ;;
-"Spotify")
-    ICON_PADDING_RIGHT=2
+    ;; 
+  "Spotify")
     ICON=
     ;;
-"TextEdit")
-    ICON_PADDING_RIGHT=4
-    ICON=
+  "WezTerm")
+    ICON=
     ;;
-"Transmission")
-    ICON_PADDING_RIGHT=3
-    ICON=󰶘
+    "Brave Browser")
+    ICON=󰜏
     ;;
-*)
-    ICON_PADDING_RIGHT=2
-    ICON=
+  *)
+    ICON=󰘔
     ;;
 esac
 
