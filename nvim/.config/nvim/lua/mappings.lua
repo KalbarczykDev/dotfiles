@@ -6,30 +6,34 @@ M.setup = function()
   local dap = require "dap"
 
   local dapui = require "dapui"
-
-  local telescope = require "telescope.builtin"
   --editor modes
   map("n", ";", ":", { desc = "CMD enter command mode" })
   map("i", "jk", "<ESC>", { desc = "Exit insert mode" })
 
   --lsp
-  map("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover" })
-  map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename" })
-  map("n", "<leader>ca", function()
+  map("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "LSP Hover (Saga)" })
+  map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename (Telescope UI if dressing.nvim)" })
+
+  map({ "n" }, "<leader>ca", function()
     vim.lsp.buf.code_action()
-  end, { desc = "LSP Code Action (with UI)" })
+  end, { desc = "Code Action (Telescope)" })
 
-  map("n", "<leader>gd", function()
-    telescope.lsp_definitions(require("telescope.themes").get_dropdown {})
-  end, { desc = "Goto Definition (Telescope)" })
+  map("n", "<leader>gd", "<cmd>Lspsaga goto_definition<CR>", { desc = "Goto Definition (Saga)" })
+  map("n", "pd", "<cmd>Lspsaga peek_definition<CR>", { desc = "Peek Definition" })
 
-  map("n", "<leader>gr", function()
-    telescope.lsp_references(require("telescope.themes").get_dropdown {})
-  end, { desc = "Find References (Telescope)" })
+  map("n", "<leader>gr", "<cmd>Lspsaga finder<CR>", { desc = "LSP Finder (Defs/Refs/Impls)" })
 
-  map("n", "<leader>td", function()
-    telescope.diagnostics(require("telescope.themes").get_dropdown {})
-  end, { desc = "Telescope Diagnostics" })
+  map("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { desc = "Prev Diagnostic" })
+  map("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", { desc = "Next Diagnostic" })
+
+  map("n", "<leader>td", "<cmd>Lspsaga show_line_diagnostics<CR>", { desc = "Line Diagnostics" })
+  map("n", "<leader>tw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", { desc = "Workspace Diagnostics" })
+  map("n", "<leader>tb", "<cmd>Lspsaga show_buf_diagnostics<CR>", { desc = "Buffer Diagnostics" })
+
+  map("n", "<leader>ci", "<cmd>Lspsaga incoming_calls<CR>", { desc = "Incoming Calls" })
+  map("n", "<leader>co", "<cmd>Lspsaga outgoing_calls<CR>", { desc = "Outgoing Calls" })
+
+  map("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { desc = "Toggle Symbols Outline" })
 
   --debugger
 
