@@ -23,6 +23,7 @@ function M.setup()
     },
     filters = {
       dotfiles = false,
+      git_ignored = false,
       custom = { ".DS_Store" },
     },
     update_focused_file = {
