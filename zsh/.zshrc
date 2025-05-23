@@ -1,44 +1,8 @@
-# Detect OS
-OS="$(uname)"
 
-# Homebrew
-if [ "$OS" = "Darwin" ]; then
-  export PATH="/opt/homebrew/bin:$PATH"
-elif [ "$OS" = "Linux" ] && [ -d "/home/linuxbrew/.linuxbrew/bin" ]; then
-  export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-fi
-
-#dotfiles 
-alias dot="cd ~/.dotfiles"
-
-#misc
-alias lah="ls -lah"
-
-#zsh
-alias cls=clear
-alias reload="source ~/.zshrc"
-alias zsh="nvim ~/.zshrc"
-
-#wezterm
-alias wez="nvim ~/.wezterm.lua"
-
-#neofetch
-alias neofetch="clear && neofetch"
-
-#gotop
-alias gotop="clear && gotop"
-
-
-#cargo (rust)
-export PATH="$HOME/.cargo/bin:$PATH"
-
-#lunarvim
-
-export PATH="$HOME/.local/bin/":$PATH
-
+#homebrew
+export PATH="/opt/homebrew/bin:$PATH"
 
 #starship prompt
-
 eval "$(starship init zsh)"
 
 # node
@@ -47,44 +11,26 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$(npm bin -g):$PATH"
 
-#Vim /Nvim
-alias vim=nvim
-alias vi=nvim
-alias v=nvim
-alias nv=nvim 
-
 #config nvim
-alias gvc="cd ~/.config/nvim"
-
-
 export EDITOR=nvim
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+
+#Aliases
+
+#Vim
+alias gvc="cd ~/.config/nvim"
+alias vim=nvim
+alias vi=nvim
+alias v=nvim
+alias nv=nvim
+
 #Python 
 alias python=python3
 alias py=python3
 alias pip=pip3
-
-venvm() {
-  local dir="${1:-.venv}"
-  if [ -f "$dir/bin/activate" ]; then
-    source "$dir/bin/activate"
-  else
-    echo "No virtual environment found at '$dir'"
-  fi
-}
-
-
-# Java
-if [ "$OS" = "Darwin" ]; then
-  export JAVA_HOME=$(/usr/libexec/java_home)
-elif [ "$OS" = "Linux" ] && [ -d "/usr/lib/jvm" ]; then
-  export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which javac))))
-fi
-export PATH="$JAVA_HOME/bin:$PATH"
-
 
 #Git
 alias gs="git status"
@@ -95,9 +41,19 @@ alias gl="git log --oneline --graph --decorate"
 alias gb="git branch"
 alias gd="git diff"
 
+#zsh
+alias reload="source ~/.zshrc"
+alias zsh="nvim ~/.zshrc"
+
+#misc
+alias lah="ls -lah"
+alias gotop="clear && gotop"
+alias cls=clear
+alias dot="cd ~/.dotfiles"
+alias neofetch="clear && neofetch"
+
 # Zsh Autosuggestions
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 
 # Zsh Syntax Highlighting (must be last)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
