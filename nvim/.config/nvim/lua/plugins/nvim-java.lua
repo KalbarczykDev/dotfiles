@@ -1,5 +1,8 @@
 return {
   {
+    "mfussenegger/nvim-jdtls",
+  },
+  {
     "nvim-java/nvim-java",
     dependencies = {
       "nvim-java/lua-async-await",
