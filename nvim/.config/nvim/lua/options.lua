@@ -1,23 +1,68 @@
-require "nvchad.options"
-
--- Indentation and Tabs
-vim.opt.expandtab = true
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-
--- Clipboard
-vim.opt.clipboard = "unnamedplus"
+-- options.lua
+local opt = vim.opt
+local o = vim.o
+local g = vim.g
 
 -- UI
-vim.opt.swapfile = false
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.background = "dark"
-vim.g.tokyonight_transparent = true
+o.laststatus = 3
+o.showmode = false
+o.number = true
+o.relativenumber = true
+o.numberwidth = 2
+o.ruler = false
+opt.fillchars = { eob = " " }
+o.signcolumn = "yes"
+o.splitbelow = true
+o.splitright = true
+o.timeoutlen = 400
+o.updatetime = 250
 
---spell check
-vim.opt.spelllang = "en_us"
-vim.opt.spell = true
+-- Indentation and Tabs
+o.expandtab = true
+o.tabstop = 2
+o.softtabstop = 2
+o.shiftwidth = 2
+o.autoindent = true
+o.smartindent = true
+
+-- Clipboard
+o.clipboard = "unnamedplus"
+
+-- Cursorline
+o.cursorline = true
+o.cursorlineopt = "number"
+
+-- Mouse
+o.mouse = "a"
+
+-- Search
+o.ignorecase = true
+o.smartcase = true
+
+-- Disable swap
+o.swapfile = false
+
+-- Spell check
+o.spell = true
+o.spelllang = "en_us"
+
+-- Background
+o.background = "dark"
+
+-- Disable intro message
+opt.shortmess:append "sI"
+
+-- whichwrap: allow left/right arrow to wrap
+opt.whichwrap:append "<>[]hl"
+
+-- Disable unused providers
+g.loaded_node_provider = 0
+g.loaded_python3_provider = 0
+g.loaded_perl_provider = 0
+g.loaded_ruby_provider = 0
+
+-- Add Mason binaries to PATH
+local is_windows = vim.fn.has "win32" ~= 0
+local sep = is_windows and "\\" or "/"
+local delim = is_windows and ";" or ":"
+vim.env.PATH = table.concat({ vim.fn.stdpath "data", "mason", "bin" }, sep) .. delim .. vim.env.PATH
