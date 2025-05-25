@@ -84,8 +84,8 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     keys = {
-      { "<C-n>", "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
-      { "<leader>e", "<cmd>NvimTreeFocus<CR>", desc = "Focus NvimTree" },
+      { "<C-n>",     "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
+      { "<leader>e", "<cmd>NvimTreeFocus<CR>",  desc = "Focus NvimTree" },
     },
     config = function()
       require("configs.nvimtree").setup()
@@ -128,12 +128,6 @@ return {
       "jay-babu/mason-null-ls.nvim",
       "nvimtools/none-ls.nvim",
       "mfussenegger/nvim-dap",
-    },
-    opts = {
-      registries = {
-        "github:nvim-java/mason-registry",
-        "github:mason-org/mason-registry",
-      },
     },
   },
   {
@@ -283,27 +277,6 @@ return {
 
   --java support plugin
   {
-    "nvim-java/nvim-java",
-    dependencies = {
-      "nvim-java/lua-async-await",
-      "nvim-java/nvim-java-core",
-      "nvim-java/nvim-java-test",
-      "nvim-java/nvim-java-dap",
-      "MunifTanjim/nui.nvim",
-      "neovim/nvim-lspconfig",
-      "mfussenegger/nvim-dap",
-      {
-        "williamboman/mason.nvim",
-        opts = {
-          registries = {
-            "github:nvim-java/mason-registry",
-            "github:mason-org/mason-registry",
-          },
-        },
-      },
-    },
-    config = function()
-      require("configs.nvim-java").setup()
-    end,
+    "mfussenegger/nvim-jdtls",
   },
 }
