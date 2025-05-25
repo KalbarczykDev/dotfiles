@@ -15,6 +15,13 @@ return {
   },
   --colors utility
   {
+    "norcalli/nvim-colorizer.lua",
+    event = "BufReadPost",
+    config = function()
+      require("configs.colorizer").setup()
+    end,
+  },
+  {
     "nvzone/minty",
     cmd = { "Shades", "Huefy" },
   },
