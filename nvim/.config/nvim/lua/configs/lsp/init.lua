@@ -6,14 +6,14 @@ local severity_icons = {
 }
 
 vim.diagnostic.config {
-  virtual_text = false, --needs to be false when using virtual lines
-  virtual_lines = {
-    current_line = false,
-    format = function(diagnostic)
-      local icon = severity_icons[diagnostic.severity] or ""
-      return icon .. " " .. diagnostic.message
-    end,
-  },
+  virtual_text = true, --needs to be false when using virtual lines
+  -- virtual_lines = {
+  --   current_line = false,
+  --   format = function(diagnostic)
+  --     local icon = severity_icons[diagnostic.severity] or ""
+  --     return icon .. " " .. diagnostic.message
+  --   end,
+  -- },
   signs = {
     text = severity_icons,
   },
@@ -22,12 +22,12 @@ vim.diagnostic.config {
   severity_sort = true,
 }
 
-vim.cmd [[
-  highlight DiagnosticError guifg=#f38ba8
-  highlight DiagnosticWarn guifg=#fab387
-  highlight DiagnosticInfo guifg=#89b4fa
-  highlight DiagnosticHint guifg=#cba6f7
-]]
+-- vim.cmd [[
+--   highlight DiagnosticError guifg=#f38ba8
+--   highlight DiagnosticWarn guifg=#fab387
+--   highlight DiagnosticInfo guifg=#89b4fa
+--   highlight DiagnosticHint guifg=#cba6f7
+-- ]]
 
 local servers = {
   lua_ls = require "configs.lsp.servers.lua_ls",

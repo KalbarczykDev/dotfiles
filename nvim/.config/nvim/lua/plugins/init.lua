@@ -34,6 +34,15 @@ return {
     end,
     opts = {},
   },
+  --highlighting todos
+  {
+    "folke/todo-comments.nvim",
+    event = "BufReadPost",
+    config = function()
+      require("configs.todo-comments").setup()
+    end,
+    opts = {},
+  },
   --colors utility
   {
     "norcalli/nvim-colorizer.lua",

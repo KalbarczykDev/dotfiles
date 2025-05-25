@@ -33,7 +33,7 @@ M.setup = function()
   map("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { desc = "Prev Diagnostic" })
   map("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", { desc = "Next Diagnostic" })
 
-  map("n", "<leader>td", "<cmd>Lspsaga show_line_diagnostics<CR>", { desc = "Line Diagnostics" })
+  map("n", "<leader>ld", "<cmd>Lspsaga show_line_diagnostics<CR>", { desc = "Line Diagnostics" })
   map("n", "<leader>tw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", { desc = "Workspace Diagnostics" })
   map("n", "<leader>tb", "<cmd>Lspsaga show_buf_diagnostics<CR>", { desc = "Buffer Diagnostics" })
 
@@ -69,6 +69,8 @@ M.setup = function()
   map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
 
   -- telescope
+  map("n", "<leader>td", "<cmd>TodoTelescope<CR>", { desc = "Search TODOs (Telescope)" })
+
   map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", {
     noremap = true,
     silent = true,
