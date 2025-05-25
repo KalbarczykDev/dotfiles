@@ -69,6 +69,11 @@ M.setup = function()
   map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
 
   -- telescope
+  map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", {
+    noremap = true,
+    silent = true,
+    desc = "Find Files (Telescope)",
+  })
   map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
   map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
   map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "telescope help page" })

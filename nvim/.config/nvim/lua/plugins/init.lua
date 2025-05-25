@@ -16,11 +16,10 @@ return {
   --indentation lines
   {
     "lukas-reineke/indent-blankline.nvim",
-    event = "BufReadPost",
-    opts = {
-      indent = { char = "│" },
-      scope = { char = "│" },
-    },
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {},
   },
   --notications
   {
@@ -53,15 +52,18 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     event = "BufReadPost",
-    opts = function()
-      --TODO config
-    end,
+    opts = {
+      signs = {
+        delete = { text = "󰍵" },
+        changedelete = { text = "󱕖" },
+      },
+    },
   },
   --package manager for lsp linters debuggers etc.
   {
     "williamboman/mason.nvim",
     config = function()
-      require "configs.mason"
+      require("configs.mason").setup()
     end,
     dependencies = {
       "jay-babu/mason-nvim-dap.nvim",
@@ -134,7 +136,7 @@ return {
         opts = { history = true, updateevents = "TextChanged,TextChangedI" },
         config = function(_, opts)
           require("luasnip").config.set_config(opts)
-          --  TODO config
+          require("configs.luasnip").setup()
         end,
       },
       -- autopairing of (){}[] etc
