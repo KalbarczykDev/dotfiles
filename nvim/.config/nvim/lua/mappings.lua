@@ -5,6 +5,10 @@ M.setup = function()
 
   local dapui = require "dapui"
 
+  --tabs
+  map("n", "<Tab>", "<Cmd>BufferNext<CR>", { desc = "Next buffer" })
+  map("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>", { desc = "Previous buffer" })
+
   --insert mode movement
   map("i", "<C-b>", "<ESC>^i", { desc = "move beginning of line" })
   map("i", "<C-e>", "<End>", { desc = "move end of line" })

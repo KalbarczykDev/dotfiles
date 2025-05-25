@@ -23,6 +23,17 @@ return {
       require("configs.dashboard").setup()
     end,
   },
+  {
+    "romgrk/barbar.nvim",
+    dependencies = {
+      "lewis6991/gitsigns.nvim",
+      "nvim-tree/nvim-web-devicons",
+    },
+    init = function()
+      vim.g.barbar_auto_setup = false
+    end,
+    opts = {},
+  },
   --colors utility
   {
     "norcalli/nvim-colorizer.lua",
@@ -57,8 +68,8 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     keys = {
-      { "<C-n>",     "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
-      { "<leader>e", "<cmd>NvimTreeFocus<CR>",  desc = "Focus NvimTree" },
+      { "<C-n>", "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
+      { "<leader>e", "<cmd>NvimTreeFocus<CR>", desc = "Focus NvimTree" },
     },
     config = function()
       require("configs.nvimtree").setup()
