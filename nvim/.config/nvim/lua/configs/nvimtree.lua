@@ -1,30 +1,49 @@
 local M = {}
 
 function M.setup()
-  --TODO local default = require "nvchad.configs.nvimtree"
   local nvimtree = require "nvim-tree"
 
   local opts = {
+
+    disable_netrw = true,
+    hijack_cursor = true,
+    sync_root_with_cwd = true,
+
     view = {
       width = 50,
       side = "left",
+      preserve_window_proportions = true,
     },
     renderer = {
+      root_folder_label = false,
       highlight_git = true,
-      group_empty = true,
+      indent_markers = { enable = true },
       icons = {
-        show = {
-          file = true,
-          folder = true,
-          folder_arrow = true,
-          git = true,
+        glyphs = {
+          default = "󰈚",
+          folder = {
+            default = "",
+            empty = "",
+            empty_open = "",
+            open = "",
+            symlink = "",
+          },
+          git = {
+            unstaged = "✗",
+            staged = "✓",
+            unmerged = "",
+            renamed = "➜",
+            untracked = "★",
+            deleted = "",
+            ignored = "◌",
+          },
         },
       },
     },
     filters = {
       dotfiles = false,
       git_ignored = false,
-      custom = { ".DS_Store" },
+      custom = { ".DS_Store", "node_modules", ".git" },
     },
     update_focused_file = {
       enable = true,
@@ -32,7 +51,7 @@ function M.setup()
     },
   }
 
-  --nvimtree.setup(vim.tbl_deep_extend("force", default, opts))
+  nvimtree.setup(opts)
 end
 
 return M

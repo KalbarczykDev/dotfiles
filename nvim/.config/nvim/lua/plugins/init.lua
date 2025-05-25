@@ -1,5 +1,5 @@
 return {
-  --utils
+  --utility plugins
   "nvim-lua/plenary.nvim",
   "nvzone/volt",
   "nvzone/menu",
@@ -11,7 +11,7 @@ return {
     "nvzone/minty",
     cmd = { "Shades", "Huefy" },
   },
-  --aditional iccons
+  --additional icons
   "nvim-tree/nvim-web-devicons",
   --indentation lines
   {
@@ -32,6 +32,10 @@ return {
   --file tree
   {
     "nvim-tree/nvim-tree.lua",
+    keys = {
+      { "<C-n>",     "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
+      { "<leader>e", "<cmd>NvimTreeFocus<CR>",  desc = "Focus NvimTree" },
+    },
     config = function()
       require("configs.nvimtree").setup()
     end,
