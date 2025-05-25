@@ -31,11 +31,12 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
-    ---@module "ibl"
-    ---@type ibl.config
     opts = {},
+    config = function()
+      require("configs.indentline").setup()
+    end,
   },
-  --notications
+  --notifications
   {
     "rcarriga/nvim-notify",
     config = function()
@@ -47,8 +48,8 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     keys = {
-      { "<C-n>", "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
-      { "<leader>e", "<cmd>NvimTreeFocus<CR>", desc = "Focus NvimTree" },
+      { "<C-n>",     "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
+      { "<leader>e", "<cmd>NvimTreeFocus<CR>",  desc = "Focus NvimTree" },
     },
     config = function()
       require("configs.nvimtree").setup()
