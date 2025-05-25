@@ -24,6 +24,13 @@ return {
     end,
   },
   {
+    "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("configs.lualine").setup()
+    end,
+  },
+  {
     "romgrk/barbar.nvim",
     dependencies = {
       "lewis6991/gitsigns.nvim",
