@@ -33,8 +33,8 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     keys = {
-      { "<C-n>",     "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
-      { "<leader>e", "<cmd>NvimTreeFocus<CR>",  desc = "Focus NvimTree" },
+      { "<C-n>", "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
+      { "<leader>e", "<cmd>NvimTreeFocus<CR>", desc = "Focus NvimTree" },
     },
     config = function()
       require("configs.nvimtree").setup()
@@ -50,7 +50,10 @@ return {
   --spell warnings
   {
     "ravibrock/spellwarn.nvim",
-    event = { "BufReadPost", "BufNewFile" },
+    event = "VeryLazy",
+    config = function()
+      require "configs.spellwarn"
+    end,
   },
   --git status information
   {
@@ -199,10 +202,10 @@ return {
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
     opts = function()
-      --TODO CONFIG  return require "nvchad.configs.treesitter"
+      return require "configs.treesitter"
     end,
     config = function(_, opts)
-      --TODO OPTS     require("nvim-treesitter.configs").setup(opts)
+      require("nvim-treesitter.configs").setup(opts)
     end,
   },
   -- Display binary files in hex format
