@@ -4,6 +4,8 @@ return {
   "nvzone/volt",
   "nvzone/menu",
   "MunifTanjim/nui.nvim",
+  --additional icons
+  "nvim-tree/nvim-web-devicons",
   --theme
   {
     "catppuccin/nvim",
@@ -11,6 +13,14 @@ return {
     priority = 1000,
     config = function()
       require("configs.catppuccin").setup()
+    end,
+  },
+  {
+    "nvimdev/dashboard-nvim",
+    event = "VimEnter",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("configs.dashboard").setup()
     end,
   },
   --colors utility
@@ -25,8 +35,7 @@ return {
     "nvzone/minty",
     cmd = { "Shades", "Huefy" },
   },
-  --additional icons
-  "nvim-tree/nvim-web-devicons",
+
   --indentation lines
   {
     "lukas-reineke/indent-blankline.nvim",

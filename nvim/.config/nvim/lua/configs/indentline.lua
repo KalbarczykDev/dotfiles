@@ -14,7 +14,7 @@ function M.setup()
       char = "│",
     },
     exclude = {
-      filetypes = { "help", "lazy", "NvimTree", "alpha" },
+      filetypes = { "help", "lazy", "NvimTree", "alpha", "dashboard" },
       buftypes = { "terminal", "nofile" },
     },
   }
