@@ -4,6 +4,7 @@ local dapui = require "dapui"
 require("dapui").setup {}
 require("nvim-dap-virtual-text").setup {
   commented = true,
+  --TODO: Hide .env values check out tjs video https://www.youtube.com/watch?v=lyNfnI-B640
 }
 
 vim.fn.sign_define("DapBreakpoint", {
