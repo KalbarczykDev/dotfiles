@@ -3,7 +3,6 @@ local M = {}
 function M.setup()
   local cmp = require "cmp"
   local luasnip = require "luasnip"
-
   cmp.setup {
     completion = { completeopt = "menu,menuone" },
 

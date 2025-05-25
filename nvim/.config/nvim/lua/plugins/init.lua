@@ -5,7 +5,14 @@ return {
   "nvzone/menu",
   "MunifTanjim/nui.nvim",
   --theme
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      require("configs.catppuccin").setup()
+    end,
+  },
   --colors utility
   {
     "nvzone/minty",

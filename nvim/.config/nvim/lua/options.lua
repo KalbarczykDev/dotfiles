@@ -5,7 +5,6 @@ M.setup = function()
   local o = vim.o
   local g = vim.g
 
-  vim.cmd.colorscheme "catppuccin"
   -- UI
   o.laststatus = 3
   o.showmode = false
@@ -19,6 +18,9 @@ M.setup = function()
   o.splitright = true
   o.timeoutlen = 400
   o.updatetime = 250
+
+  --persist undo
+  o.undofile = true
 
   -- Indentation and Tabs
   o.expandtab = true
