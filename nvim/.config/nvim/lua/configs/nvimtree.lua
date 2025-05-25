@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup()
-  local default = require "nvchad.configs.nvimtree"
+  --TODO local default = require "nvchad.configs.nvimtree"
   local nvimtree = require "nvim-tree"
 
   local opts = {
@@ -32,7 +32,7 @@ function M.setup()
     },
   }
 
-  nvimtree.setup(vim.tbl_deep_extend("force", default, opts))
+  --nvimtree.setup(vim.tbl_deep_extend("force", default, opts))
 end
 
 return M
