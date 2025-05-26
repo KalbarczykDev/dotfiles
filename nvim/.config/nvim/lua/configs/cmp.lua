@@ -3,13 +3,35 @@ local M = {}
 function M.setup()
   local cmp = require "cmp"
   local luasnip = require "luasnip"
+  local lspkind = require "lspkind"
+
   cmp.setup {
-    completion = { completeopt = "menu,menuone" },
+    completion = { completeopt = "menu,menuone,noinsert" },
 
     snippet = {
       expand = function(args)
         luasnip.lsp_expand(args.body)
       end,
+    },
+
+    window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
+    },
+
+    formatting = {
+      format = lspkind.cmp_format {
+        mode = "symbol_text",
+        maxwidth = 50,
+        ellipsis_char = "...",
+        menu = {
+          buffer = "[Buffer]",
+          nvim_lsp = "[LSP]",
+          luasnip = "[Snip]",
+          nvim_lua = "[Lua]",
+          path = "[Path]",
+        },
+      },
     },
 
     mapping = {
