@@ -27,8 +27,11 @@ M.setup = function()
   map("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", { desc = "Next Diagnostic" })
 
   map("n", "<leader>ld", "<cmd>Lspsaga show_line_diagnostics<CR>", { desc = "Line Diagnostics" })
-  map("n", "<leader>tw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", { desc = "Workspace Diagnostics" })
   map("n", "<leader>tb", "<cmd>Lspsaga show_buf_diagnostics<CR>", { desc = "Buffer Diagnostics" })
+  map("n", "<leader>wd", "<cmd>Telescope diagnostics<cr>", { desc = "Telescope Diagnostics" })
+  map("n", "<leader>fd", function()
+    require("telescope.builtin").diagnostics { bufnr = 0 }
+  end, { desc = "Telescope Diagnostics (Current File)" })
 
   map("n", "<leader>ci", "<cmd>Lspsaga incoming_calls<CR>", { desc = "Incoming Calls" })
   map("n", "<leader>co", "<cmd>Lspsaga outgoing_calls<CR>", { desc = "Outgoing Calls" })
