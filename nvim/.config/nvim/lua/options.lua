@@ -59,6 +59,9 @@ M.setup = function()
   -- whichwrap: allow left/right arrow to wrap
   opt.whichwrap:append "<>[]hl"
 
+  --create vertical split to show results of a command (must have!)
+  opt.inccommand = "split"
+
   -- Disable unused providers
   g.loaded_node_provider = 0
   g.loaded_python3_provider = 0
