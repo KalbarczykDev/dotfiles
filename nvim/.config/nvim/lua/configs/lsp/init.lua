@@ -42,6 +42,8 @@ local servers = {
   cssls = require "configs.lsp.servers.cssls",
   jsonls = require "configs.lsp.servers.jsonls",
   emmet_ls = require "configs.lsp.servers.emmet_ls",
+  bashls = require "configs.lsp.servers.bashls",
+  taplo = require "configs.lsp.servers.taplo",
 }
 
 for name, opts in pairs(servers) do

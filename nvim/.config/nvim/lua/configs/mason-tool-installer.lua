@@ -1,37 +1,41 @@
 require("mason-tool-installer").setup {
   ensure_installed = {
     -- LSPs
-    "lua-language-server", -- Lua
-    "clangd", -- C/C++
-    "pyright", -- Python
-    "jdtls", -- Java
-    "lemminx", -- XML
-    "yaml-language-server", -- YAML
+    "lua-language-server",        -- Lua
+    "clangd",                     -- C/C++
+    "pyright",                    -- Python
+    "jdtls",                      -- Java
+    "lemminx",                    -- XML
+    "yaml-language-server",       -- YAML
     "typescript-language-server", -- JavaScript/TypeScript
-    "angular-language-server", -- Angular
-    "html-lsp", -- HTML
-    "css-lsp", -- CSS
-    "json-lsp", -- JSON
-    "emmet_ls", -- Emmet (HTML, JSX)
+    "angular-language-server",    -- Angular
+    "html-lsp",                   -- HTML
+    "css-lsp",                    -- CSS
+    "json-lsp",                   -- JSON
+    "emmet_ls",                   -- Emmet (HTML, JSX)
+    "bashls",                     --Bash
+    "taplo",                      -- toml
 
     -- Formatters
-    "stylua", -- Lua
-    "prettierd", -- JS/TS, HTML, CSS, etc.
-    "black", -- Python
-    "clang-format", -- C/C++
+    "stylua",             -- Lua
+    "prettierd",          -- JS/TS, HTML, CSS, etc.
+    "black",              -- Python
+    "clang-format",       -- C/C++
     "google-java-format", -- Java
 
     -- Linters
-    "ruff", --Python
-    "mypy", -- Python
+    "ruff",     --Python
+    "mypy",     -- Python
     "eslint_d", -- JS/TS
 
     -- Debuggers
-    "codelldb", -- C/C++
-    "debugpy", -- Python
+    "codelldb",           -- C/C++
+    "debugpy",            -- Python
     "java-debug-adapter", -- Java
+    "js-debug-adapter",   -- JS/TS
+
+    --Test
     "java-test", -- Java Testing
-    "js-debug-adapter", -- JS/TS
   },
   auto_update = false,
   run_on_start = true,

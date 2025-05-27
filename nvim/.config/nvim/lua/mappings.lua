@@ -8,14 +8,7 @@ M.setup = function()
   --tabs
   map("n", "<Tab>", "<Cmd>BufferNext<CR>", { desc = "Next buffer" })
   map("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>", { desc = "Previous buffer" })
-
-  --insert mode movement
-  map("i", "<C-b>", "<ESC>^i", { desc = "move beginning of line" })
-  map("i", "<C-e>", "<End>", { desc = "move end of line" })
-  map("i", "<C-h>", "<Left>", { desc = "move left" })
-  map("i", "<C-l>", "<Right>", { desc = "move right" })
-  map("i", "<C-j>", "<Down>", { desc = "move down" })
-  map("i", "<C-k>", "<Up>", { desc = "move up" })
+  map("n", "<C-x>", "<Cmd>BufferClose<CR>", { desc = "Close buffer" })
 
   --lsp
   map("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "LSP Hover (Saga)" })

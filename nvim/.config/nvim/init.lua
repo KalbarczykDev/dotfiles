@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.cmd "filetype on"
+vim.opt.termguicolors = true
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
@@ -22,6 +23,7 @@ require("lazy").setup {
 }
 
 require("options").setup()
+require("autocmds").setup()
 
 vim.schedule(function()
   require("mappings").setup()

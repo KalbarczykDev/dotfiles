@@ -50,7 +50,7 @@ alias lah="ls -lah"
 alias gotop="clear && gotop"
 alias cls=clear
 alias dot="cd ~/.dotfiles"
-alias neofetch="clear && neofetch"
+alias fastfetch="clear && fastfetch"
 alias matrix="cmatrix"
 # Zsh Autosuggestions
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh

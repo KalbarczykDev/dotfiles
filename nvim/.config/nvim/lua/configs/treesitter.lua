@@ -21,6 +21,8 @@ M.ensure_installed = {
   "json",
   "yaml",
   "markdown",
+  "bash",
+  "toml",
 }
 
 M.auto_install = true
