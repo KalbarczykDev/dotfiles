@@ -84,8 +84,8 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     keys = {
-      { "<C-n>",     "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
-      { "<leader>e", "<cmd>NvimTreeFocus<CR>",  desc = "Focus NvimTree" },
+      { "<C-n>", "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
+      { "<leader>e", "<cmd>NvimTreeFocus<CR>", desc = "Focus NvimTree" },
     },
     config = function()
       require("configs.nvimtree").setup()
@@ -145,7 +145,7 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
-      require "configs.lsp.init"
+      require "configs.lsp-config"
     end,
   },
   {
