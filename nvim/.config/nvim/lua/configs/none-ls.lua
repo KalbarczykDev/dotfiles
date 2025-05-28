@@ -24,5 +24,8 @@ null_ls.setup {
 
     -- Markdown
     null_ls.builtins.diagnostics.markdownlint,
+
+    --shell
+    --shellcheck not needed expicite
   },
 }

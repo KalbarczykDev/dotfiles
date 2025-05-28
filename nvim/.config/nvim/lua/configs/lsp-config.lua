@@ -5,6 +5,11 @@ local severity_icons = {
   [vim.diagnostic.severity.INFO] = "",
 }
 
+local cmp_lsp = require "cmp_nvim_lsp"
+local capabilities =
+  vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
+local lspconfig = require "lspconfig"
+local util = require "lspconfig.util"
 vim.diagnostic.config {
   virtual_text = true,
 
@@ -16,14 +21,19 @@ vim.diagnostic.config {
   severity_sort = true,
 }
 
-local cmp_lsp = require "cmp_nvim_lsp"
-local capabilities =
-  vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
-
 local servers = {
   ts_ls = true, --JS/TS/TSX and JSX
-  intelephense = true, --PHP/Laravel/Blade
-  vue_language_server = true, --vue
+
+  phpactor = {
+    cmd = { "phpactor", "language-server" },
+    filetypes = { "php" },
+    root_dir = function(fname)
+      return util.root_pattern("composer.json", ".git", ".phpactor.json", ".phpactor.yml", ".php")(fname)
+        or util.path.dirname(fname)
+    end,
+  },
+  --PHP/Laravel/Blade
+  volar = true, --vue
   angularls = true, --angular
   html = true, --html
   emmet_ls = true, --html snippets
@@ -38,16 +48,13 @@ local servers = {
   bashls = true, --shell
 }
 
-local lspconfig = require "lspconfig"
-
 for name, config in pairs(servers) do
   if config == true then
-    lspconfig[name].setup {
-      capabilities = capabilities,
-    }
-  else
-    lspconfig[name].setup(vim.tbl_deep_extend("force", config, {
-      capabilities = capabilities,
-    }))
+    config = {}
   end
+  config = vim.tbl_deep_extend("force", {}, {
+    capabilities = capabilities,
+  }, config)
+
+  lspconfig[name].setup(config)
 end

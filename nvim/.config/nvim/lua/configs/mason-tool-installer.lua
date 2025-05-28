@@ -13,7 +13,7 @@ require("mason-tool-installer").setup {
 
     --PHP/Laravel/Blade
     --LSP:
-    "intelephense",
+    "phpactor",
     --DAP:
     "php-debug-adapter",
     --Linter:
