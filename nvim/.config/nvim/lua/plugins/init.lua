@@ -1,4 +1,3 @@
----@diagnostic disable: different-requires
 return {
   --utility plugins
   "nvim-lua/plenary.nvim",

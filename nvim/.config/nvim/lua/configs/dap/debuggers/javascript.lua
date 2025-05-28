@@ -16,7 +16,7 @@ M.setup = function()
     },
   }
 
-  for _, language in ipairs { "typescript", "javascript" } do
+  for _, language in ipairs { "typescript", "javascript", "javascriptreact", "typescriptreact" } do
     dap.configurations[language] = {
       {
         type = "pwa-node",
