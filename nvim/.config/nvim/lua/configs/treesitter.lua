@@ -1,21 +1,46 @@
 local M = {}
 
 M.ensure_installed = {
-  "lua",
-  "python",
-  "java",
-  "xml",
-  "yaml",
+  --web dev languages
   "javascript",
   "typescript",
   "tsx",
+  "php",
+
+  --templates
   "html",
+  "angular",
+  "blade",
+  "vue",
+
+  --styles
   "css",
-  "json",
+  "scss",
+
+  --database
+  "sql",
+
+  --config files
+  "lua",
+  "xml",
   "yaml",
-  "markdown",
-  "bash",
+  "json",
+  "json5",
   "toml",
+  "gitignore",
+  "editorconfig",
+
+  --markdown & docs
+  "markdown",
+  "markdown_inline",
+  "jsdoc",
+  "phpdoc",
+
+  --Shell
+  "bash",
+
+  --other
+  "java",
 }
 
 M.auto_install = true

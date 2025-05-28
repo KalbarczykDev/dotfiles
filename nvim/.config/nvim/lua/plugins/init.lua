@@ -284,4 +284,5 @@ return {
   },
 
   --TODO: Neotest https://github.com/nvim-neotest/neotest
+  --Database https://github.com/kndndrj/nvim-dbee
 }
