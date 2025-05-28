@@ -40,7 +40,7 @@ end
 --https://github.com/ThePrimeagen/init.lua/blob/master/lua/theprimeagen/lazy/lsp.lua
 --https://github.com/tjdevries/config.nvim/blob/master/lua/custom/plugins/lsp.lua
 --3. formating with conform maybe instead of null ls
---[[
+--[[ NOTE:
   🌐 Web Dev Stack — LSP, DAP, Linters, Formatters, Tests
 
   📦 JavaScript / TypeScript / TSX

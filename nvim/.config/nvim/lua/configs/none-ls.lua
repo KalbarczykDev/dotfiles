@@ -14,9 +14,6 @@ none_ls.setup {
       filetypes = { "lua" },
     },
 
-    formatting.black.with {
-      filetypes = { "python" },
-    },
     formatting.google_java_format.with {
       filetypes = { "java" },
     },
@@ -28,8 +25,6 @@ none_ls.setup {
         "typescriptreact",
         "javascriptreact",
         "vue",
-        "svelte",
-        "astro",
         "css",
         "html",
         "json",
@@ -47,7 +42,7 @@ none_ls.setup {
     },
 
     -- JS/TS
-    eslint_d,
+    eslint_d, --TODO: make eslint work only when the config is present
     eslint_code_actions,
   },
   on_attach = on_attach,

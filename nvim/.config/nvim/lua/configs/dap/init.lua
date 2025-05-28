@@ -4,7 +4,20 @@ local dapui = require "dapui"
 require("dapui").setup {}
 require("nvim-dap-virtual-text").setup {
   commented = true,
-  --TODO: Hide .env values check out tjs video https://www.youtube.com/watch?v=lyNfnI-B640
+  display_callback = function(variable)
+    --censor secret keys in output
+    local name = string.lower(variable.name)
+    local value = string.lower(variable.value)
+    if name:match "secret" or name:match "api" or value:match "secret" or value:match "api" then
+      return "*****"
+    end
+
+    if #variable.value > 15 then
+      return " " .. string.sub(variable.value, 1, 15) .. "... "
+    end
+
+    return " " .. variable.value
+  end,
 }
 
 vim.fn.sign_define("DapBreakpoint", {
