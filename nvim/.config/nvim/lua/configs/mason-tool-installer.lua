@@ -1,28 +1,122 @@
 require("mason-tool-installer").setup {
   ensure_installed = {
-    -- LSPs
-    "lua-language-server",        -- Lua
-    "lemminx",                    -- XML
-    "yaml-language-server",       -- YAML
-    "typescript-language-server", -- JavaScript/TypeScript
-    "angular-language-server",    -- Angular
-    "html-lsp",                   -- HTML
-    "css-lsp",                    -- CSS
-    "json-lsp",                   -- JSON
-    "emmet_ls",                   -- Emmet (HTML, JSX)
-    "bashls",                     --Bash
-    "taplo",                      -- toml
 
-    -- Formatters
-    "stylua",    -- Lua
-    "prettierd", -- JS/TS, HTML, CSS, etc.
+    --JavaScript/TypeScript/TSX AND JSX
+    --LSP:
+    "typescript-language-server",
+    --DAP:
+    "js-debug-adapter",
+    --Linter:
+    "eslint_d",
+    --Formater:
+    "prettierd",
 
-    -- Linters
-    "eslint_d", -- JS/TS
+    --PHP/Laravel/Blade
+    --LSP:
+    "intelephense",
+    --DAP:
+    "php-debug-adapter",
+    --Linter:
+    "phpstan",
+    --Formater:
+    "pint",
+    "blade-formatter", -- blade template
+    --Aditional diagnostics:
+    "phpcs",
 
-    -- Debuggers
-    "js-debug-adapter", -- JS/TS
+    --Vue
+    --LSP:
+    "volar",
+    --DAP:
+    --js-debug-adapter
+    --Linter:
+    --eslint
+    --Formater:
+    --prettierd
 
+    --Angular
+    --LSP:
+    "angular-language-server",
+    --DAP:
+    --js-debug-adapter
+    --Linter:
+    --eslint
+    --Formater:
+    --prettierd
+
+    --HTML
+    --LSP:
+    "html-lsp",
+    --Snippets:
+    "emmet_ls",
+    --Formater:
+    --prettierd
+
+    --CSS/SCSS
+    --LSP:
+    "css-lsp",
+    --Linter:
+    "stylelint",
+    --Formater:
+    --prettierd
+
+    --Lua
+    --LSP:
+    "lua-language-server",
+    --Linter:
+    "luacheck",
+    --Formater:
+    "stylua",
+
+    --SQL
+    --LSP:
+    "sqls",
+    --Linter:
+    "sqlfluff",
+    --Formater:
+    "sql-formatter",
+
+    --XML
+    --LSP:
+    "lemminx",
+    --Formater:
+    "xmlformatter",
+
+    --Yaml
+    --LSP:
+    "yamlls",
+    --Linter:
+    "yamllint",
+    --Formater:
+    --prettierd
+
+    --JSON/JSON5
+    --LSP:
+    "json-lsp",
+    --Linter:
+    --eslint
+    --Formater:
+    --prettierd
+
+    --TOML
+    -- LSP:
+    "taplo",
+
+    --Markdown
+    --LSP
+    "marksman",
+    --Linter:
+    "markdownlint",
+    --Formater:
+    --prettierd
+
+    --Bash
+    -- LSP:
+    "bash-language-server",
+    -- Linter:
+    "shellcheck",
+    -- Formatter:
+    "shfmt",
   },
   auto_update = false,
   run_on_start = true,
