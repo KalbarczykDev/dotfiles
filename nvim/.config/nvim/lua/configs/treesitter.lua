@@ -40,7 +40,6 @@ M.ensure_installed = {
   "bash",
 
   --other
-  "java",
   "prolog",
 }
 

@@ -2,7 +2,6 @@ require("mason-tool-installer").setup {
   ensure_installed = {
     -- LSPs
     "lua-language-server",        -- Lua
-    "jdtls",                      -- Java
     "lemminx",                    -- XML
     "yaml-language-server",       -- YAML
     "typescript-language-server", -- JavaScript/TypeScript
@@ -15,19 +14,15 @@ require("mason-tool-installer").setup {
     "taplo",                      -- toml
 
     -- Formatters
-    "stylua",             -- Lua
-    "prettierd",          -- JS/TS, HTML, CSS, etc.
-    "google-java-format", -- Java
+    "stylua",    -- Lua
+    "prettierd", -- JS/TS, HTML, CSS, etc.
 
     -- Linters
     "eslint_d", -- JS/TS
 
     -- Debuggers
-    "java-debug-adapter", -- Java
-    "js-debug-adapter",   -- JS/TS
+    "js-debug-adapter", -- JS/TS
 
-    --Test
-    "java-test", -- Java Testing
   },
   auto_update = false,
   run_on_start = true,

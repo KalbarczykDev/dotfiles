@@ -278,10 +278,7 @@ return {
     end,
   },
 
-  --java support plugin
-  {
-    "mfussenegger/nvim-jdtls",
-  },
+
 
   --TODO: Neotest https://github.com/nvim-neotest/neotest
   --JavaScript/Typescript/TSX/JSX  tests : Jest,Vitetest
