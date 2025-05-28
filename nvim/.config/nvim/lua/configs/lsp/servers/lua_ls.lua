@@ -1,10 +1,9 @@
-local on_attach = require "configs.lsp.on_attach"
 local capabilities = require "configs.lsp.capabilities"
 
 return {
   cmd = { "lua-language-server", "--force-accept-workspace" },
   filetypes = { "lua" },
-  on_attach = on_attach,
+
   capabilities = capabilities,
   settings = {
     Lua = {

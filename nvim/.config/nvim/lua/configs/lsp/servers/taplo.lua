@@ -1,4 +1,3 @@
-local on_attach = require "configs.lsp.on_attach"
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 return {
@@ -10,6 +9,6 @@ return {
       },
     },
   },
-  on_attach = on_attach,
+
   capabilities = capabilities,
 }
