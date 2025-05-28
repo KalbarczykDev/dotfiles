@@ -41,6 +41,7 @@ M.ensure_installed = {
 
   --other
   "java",
+  "prolog",
 }
 
 M.auto_install = true
