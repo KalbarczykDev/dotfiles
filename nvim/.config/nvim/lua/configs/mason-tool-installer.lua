@@ -2,8 +2,6 @@ require("mason-tool-installer").setup {
   ensure_installed = {
     -- LSPs
     "lua-language-server",        -- Lua
-    "clangd",                     -- C/C++
-    "pyright",                    -- Python
     "jdtls",                      -- Java
     "lemminx",                    -- XML
     "yaml-language-server",       -- YAML
@@ -19,18 +17,12 @@ require("mason-tool-installer").setup {
     -- Formatters
     "stylua",             -- Lua
     "prettierd",          -- JS/TS, HTML, CSS, etc.
-    "black",              -- Python
-    "clang-format",       -- C/C++
     "google-java-format", -- Java
 
     -- Linters
-    "ruff",     --Python
-    "mypy",     -- Python
     "eslint_d", -- JS/TS
 
     -- Debuggers
-    "codelldb",           -- C/C++
-    "debugpy",            -- Python
     "java-debug-adapter", -- Java
     "js-debug-adapter",   -- JS/TS
 

@@ -59,5 +59,5 @@ dap.listeners.before.disconnect["dapui_config"] = function()
 end
 
 --list debuggers
-require "configs.dap.debuggers.codelldb"
+
 require("configs.dap.debuggers.javascript").setup()

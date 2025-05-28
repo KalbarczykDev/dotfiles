@@ -18,9 +18,6 @@ vim.diagnostic.config {
 
 local servers = {
   lua_ls = require "configs.lsp.servers.lua_ls",
-  clangd = require "configs.lsp.servers.clangd",
-  pyright = require "configs.lsp.servers.pyright",
-  ruff = require "configs.lsp.servers.ruff",
   lemminx = require "configs.lsp.servers.lemminx",
   yamlls = require "configs.lsp.servers.yamlls",
   ts_ls = require "configs.lsp.servers.ts_ls",
