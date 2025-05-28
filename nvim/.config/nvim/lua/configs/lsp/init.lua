@@ -48,56 +48,54 @@ end
   - DAP: vscode-js-debug (via nvim-dap)
   - Linter: eslint
   - Formatter: prettier
-  - Tests: jest, vitest, mocha (via neotest, jest.nvim, or dap-jest)
+
 
   🐘 PHP
   - LSP: intelephense / phpactor
   - DAP: vscode-php-debug (with Xdebug)
   - Linter: phpcs / phpstan / psalm
   - Formatter: phpcbf / php-cs-fixer
-  - Tests: PHPUnit (via neotest-phpunit or dap)
+
 
   📄 HTML
   - LSP: html
   - DAP: none
   - Linter: eslint-plugin-html (optional)
   - Formatter: prettier
-  - Tests: n/a
+
 
   🅰️ Angular (with HTML/TS)
   - LSP: angularls
   - DAP: vscode-js-debug
   - Linter: eslint (Angular CLI built-in)
   - Formatter: prettier
-  - Tests: Jasmine + Karma (can run via neotest if script configured)
 
   🧩 Blade (Laravel Templates)
   - LSP: none
   - DAP: none
   - Linter: none
   - Formatter: blade-formatter
-  - Tests: n/a
+
 
   🧱 Vue
   - LSP: volar (preferred) / vetur
   - DAP: vscode-js-debug
   - Linter: eslint (with eslint-plugin-vue)
   - Formatter: prettier (with prettier-plugin-vue)
-  - Tests: vitest / jest (via neotest)
 
   🎨 CSS / SCSS
   - LSP: cssls
   - DAP: none
   - Linter: stylelint
   - Formatter: prettier / stylelint --fix
-  - Tests: n/a
+
 
   🗄️ SQL
   - LSP: sqls / sqlls / sqlite-lsp
   - DAP: none
   - Linter: sqlfluff / sqlint
   - Formatter: sql-formatter
-  - Tests: raw SQL validation only
+
 
   ⚙️ Config / Meta files
 

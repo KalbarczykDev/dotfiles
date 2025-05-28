@@ -284,5 +284,9 @@ return {
   },
 
   --TODO: Neotest https://github.com/nvim-neotest/neotest
-  --Database https://github.com/kndndrj/nvim-dbee
+  --JavaScript/Typescript/TSX/JSX  tests : Jest,Vitetest
+  --PHP tests: PHPUnit
+  --ANGULAR tests: Jasmine + Karma
+  --VUE : Vitetest and Jest
+  --TODO: Database https://github.com/kndndrj/nvim-dbee
 }

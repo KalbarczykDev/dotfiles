@@ -9,38 +9,6 @@ local eslint_code_actions = require "none-ls.code_actions.eslint_d"
 
 none_ls.setup {
   sources = {
-    -- FORMATTERS
-    formatting.stylua.with {
-      filetypes = { "lua" },
-    },
-
-    formatting.google_java_format.with {
-      filetypes = { "java" },
-    },
-
-    formatting.prettierd.with {
-      filetypes = {
-        "javascript",
-        "typescript",
-        "typescriptreact",
-        "javascriptreact",
-        "vue",
-        "css",
-        "html",
-        "json",
-        "yaml",
-        "markdown",
-        "xml",
-      },
-    },
-
-    -- LINTERS / DIAGNOSTICS
-
-    --Python
-    diagnostics.mypy.with {
-      filetypes = { "python" },
-    },
-
     -- JS/TS
     eslint_d, --TODO: make eslint work only when the config is present
     eslint_code_actions,
