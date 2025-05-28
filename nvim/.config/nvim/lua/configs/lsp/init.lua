@@ -6,14 +6,8 @@ local severity_icons = {
 }
 
 vim.diagnostic.config {
-  virtual_text = true, --needs to be false when using virtual lines
-  -- virtual_lines = {
-  --   current_line = false,
-  --   format = function(diagnostic)
-  --     local icon = severity_icons[diagnostic.severity] or ""
-  --     return icon .. " " .. diagnostic.message
-  --   end,
-  -- },
+  virtual_text = true,
+
   signs = {
     text = severity_icons,
   },
@@ -21,13 +15,6 @@ vim.diagnostic.config {
   update_in_insert = true,
   severity_sort = true,
 }
-
--- vim.cmd [[
---   highlight DiagnosticError guifg=#f38ba8
---   highlight DiagnosticWarn guifg=#fab387
---   highlight DiagnosticInfo guifg=#89b4fa
---   highlight DiagnosticHint guifg=#cba6f7
--- ]]
 
 local servers = {
   lua_ls = require "configs.lsp.servers.lua_ls",
@@ -49,3 +36,10 @@ local servers = {
 for name, opts in pairs(servers) do
   require("lspconfig")[name].setup(opts)
 end
+
+--TODO: rework the lsp system
+--1. check configurations on the official nvim-lspconfig github
+--2. check tjdevries and the primagean configs for lsp
+--https://github.com/ThePrimeagen/init.lua/blob/master/lua/theprimeagen/lazy/lsp.lua
+--https://github.com/tjdevries/config.nvim/blob/master/lua/custom/plugins/lsp.lua
+--3. formating with conform maybe instead of null ls
