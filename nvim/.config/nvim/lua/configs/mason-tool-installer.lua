@@ -26,7 +26,7 @@ require("mason-tool-installer").setup {
 
     --Vue
     --LSP:
-    "volar",
+    "vue-language-server",
     --DAP:
     --js-debug-adapter
     --Linter:
@@ -63,8 +63,6 @@ require("mason-tool-installer").setup {
     --Lua
     --LSP:
     "lua-language-server",
-    --Linter:
-    "luacheck",
     --Formater:
     "stylua",
 
@@ -84,7 +82,7 @@ require("mason-tool-installer").setup {
 
     --Yaml
     --LSP:
-    "yamlls",
+    "yaml-language-server",
     --Linter:
     "yamllint",
     --Formater:
