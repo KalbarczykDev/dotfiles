@@ -7,49 +7,6 @@ return {
   --additional icons
   "nvim-tree/nvim-web-devicons",
 
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("configs.lualine").setup()
-    end,
-  },
-
-  --indentation lines
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    opts = {},
-    config = function()
-      require("configs.indentline").setup()
-    end,
-  },
-  --notifications
-  {
-    "rcarriga/nvim-notify",
-    config = function()
-      require("configs.nvim-notify").setup()
-    end,
-  },
-
-  --file tree
-  {
-    "nvim-tree/nvim-tree.lua",
-    keys = {
-      { "<C-n>", "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
-      { "<leader>e", "<cmd>NvimTreeFocus<CR>", desc = "Focus NvimTree" },
-    },
-    config = function()
-      require("configs.nvimtree").setup()
-    end,
-  },
-  --keys cheatsheat
-  {
-    "folke/which-key.nvim",
-    keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g" },
-    cmd = "WhichKey",
-    opts = {},
-  },
   --spell warnings
   {
     "ravibrock/spellwarn.nvim",
