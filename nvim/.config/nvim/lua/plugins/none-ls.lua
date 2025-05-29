@@ -26,10 +26,6 @@ return {
         "typescriptreact",
       }
 
-      local function has_eslint_config(utils)
-        return utils.root_has_file(eslint_root_files)
-      end
-
       local phpcs_root_files = {
         "phpcs.xml",
         ".phpcs.xml",
@@ -124,12 +120,12 @@ return {
                 return false
               end
 
-              local enabled = utils.root_has_file ".luacheckrc"
+              local enabled = utils.root_has_file "/nvim/.config/nvim/.luacheckrc" --HACK: workaround the fact the root for this project is .dotfiles
 
               if not enabled then
-                notify("luacheck skipped — no config found", vim.log.levels.WARN)
+                notify("null-ls", "luacheck skipped — no config found", vim.log.levels.WARN)
               else
-                notify "luacheck diagnostics enabled"
+                notify("null-ls", "luacheck diagnostics enabled")
               end
               return enabled
             end,
