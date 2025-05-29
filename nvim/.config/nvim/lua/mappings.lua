@@ -86,3 +86,14 @@ map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
 map("n", "<leader>wk", function()
   vim.cmd("WhichKey " .. vim.fn.input "WhichKey: ")
 end, { desc = "whichkey query lookup" })
+
+-- copilot
+map("i", "<C-L>", 'copilot#Accept("<CR>")', {
+  expr = true,
+  silent = true,
+  desc = "Copilot: Accept Suggestion",
+})
+
+map("n", "<leader>ce", ":Copilot enable<CR>", { desc = "Copilot: Enable" })
+map("n", "<leader>cd", ":Copilot disable<CR>", { desc = "Copilot: Disable" })
+map("n", "<leader>cs", ":Copilot status<CR>", { desc = "Copilot: Status" })
