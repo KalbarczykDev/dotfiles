@@ -34,7 +34,7 @@ return {
         bash = { "shfmt" },
 
         -- SQL
-        sql = { "sql-formatter" },
+        sql = { "sqlfluff" },
 
         -- XML
         xml = { "xmlformatter" },

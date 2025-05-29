@@ -103,10 +103,8 @@ return {
               --SQL
               --LSP:
               "sqls",
-              --Linter:
+              --Linter/Formater:
               "sqlfluff",
-              --Formater:
-              "sql-formatter",
 
               --XML
               --LSP:
