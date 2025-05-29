@@ -19,9 +19,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup "plugins"
 require "options"
 require "autocmds"
-
---TODO: Move every plugin to separate file
---TODO : Move every mapping to corresponding plugin file
 vim.schedule(function()
   require "mappings"
 end)

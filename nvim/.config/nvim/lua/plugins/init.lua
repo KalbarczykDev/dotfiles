@@ -152,20 +152,7 @@ return {
       require "configs.telescope"
     end,
   },
-  --Syntax highlighting
-  {
-    "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPost", "BufNewFile" },
-    cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
-    build = ":TSUpdate",
-    opts = function()
-      return require "configs.treesitter"
-    end,
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-    end,
-  },
-
+  --TODO: Move every plugin to separate file
   --TODO: Neotest https://github.com/nvim-neotest/neotest
   --JavaScript/Typescript/TSX/JSX  tests : Jest,Vitetest
   --PHP tests: PHPUnit
