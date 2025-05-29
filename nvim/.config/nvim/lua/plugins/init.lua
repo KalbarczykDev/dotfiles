@@ -6,14 +6,7 @@ return {
   "MunifTanjim/nui.nvim",
   --additional icons
   "nvim-tree/nvim-web-devicons",
-  {
-    "nvimdev/dashboard-nvim",
-    event = "VimEnter",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("configs.dashboard").setup()
-    end,
-  },
+
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
@@ -32,15 +25,7 @@ return {
     end,
     opts = {},
   },
-  --highlighting todos
-  {
-    "folke/todo-comments.nvim",
-    event = "BufReadPost",
-    config = function()
-      require("configs.todo-comments").setup()
-    end,
-    opts = {},
-  },
+
   --colors utility
   {
     "norcalli/nvim-colorizer.lua",
@@ -109,28 +94,7 @@ return {
     },
   },
   --package manager for lsp linters debuggers etc.
-  {
-    "williamboman/mason.nvim",
-    config = function()
-      require("configs.mason").setup()
-    end,
-    dependencies = {
-      "jay-babu/mason-nvim-dap.nvim",
-      "jay-babu/mason-null-ls.nvim",
-      "nvimtools/none-ls.nvim",
-      "mfussenegger/nvim-dap",
-    },
-  },
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    event = "User MasonReady",
-    dependencies = {
-      "williamboman/mason.nvim",
-    },
-    config = function()
-      require "configs.mason-tool-installer"
-    end,
-  },
+
   --lsp integration plugins
   {
     "neovim/nvim-lspconfig",
@@ -367,51 +331,6 @@ return {
         }
       end
     end,
-  },
-
-  {
-    "stevearc/conform.nvim",
-    opts = {
-      format_on_save = {
-        lsp_fallback = true,
-        timeout_ms = 1500,
-      },
-      formatters_by_ft = {
-        -- JavaScript / TypeScript / JSX / TSX / Vue / Angular
-        javascript = { "prettierd" },
-        javascriptreact = { "prettierd" },
-        typescript = { "prettierd" },
-        typescriptreact = { "prettierd" },
-        vue = { "prettierd" },
-        html = { "prettierd" },
-        css = { "prettierd" },
-        scss = { "prettierd" },
-        json = { "prettierd" },
-        json5 = { "prettierd" },
-        yaml = { "prettierd" },
-        markdown = { "prettierd" },
-
-        -- PHP / Laravel / Blade
-        php = { "pint" },
-        blade = { "blade-formatter" },
-
-        -- Lua
-        lua = { "stylua" },
-
-        -- Bash
-        sh = { "shfmt" },
-        bash = { "shfmt" },
-
-        -- SQL
-        sql = { "sql-formatter" },
-
-        -- XML
-        xml = { "xmlformatter" },
-
-        -- TOML
-        toml = { "taplo" }, -- taplo has native formatter
-      },
-    },
   },
 
   --TODO: Neotest https://github.com/nvim-neotest/neotest
