@@ -14,30 +14,6 @@ return {
       require("configs.lualine").setup()
     end,
   },
-  {
-    "romgrk/barbar.nvim",
-    dependencies = {
-      "lewis6991/gitsigns.nvim",
-      "nvim-tree/nvim-web-devicons",
-    },
-    init = function()
-      vim.g.barbar_auto_setup = false
-    end,
-    opts = {},
-  },
-
-  --colors utility
-  {
-    "norcalli/nvim-colorizer.lua",
-    event = "BufReadPost",
-    config = function()
-      require("configs.colorizer").setup()
-    end,
-  },
-  {
-    "nvzone/minty",
-    cmd = { "Shades", "Huefy" },
-  },
 
   --indentation lines
   {
@@ -93,54 +69,7 @@ return {
       },
     },
   },
-  --package manager for lsp linters debuggers etc.
 
-  --lsp integration plugins
-  {
-    "neovim/nvim-lspconfig",
-    event = { "BufReadPre", "BufNewFile" },
-    config = function()
-      require "configs.lsp-config"
-    end,
-  },
-  {
-    "nvimdev/lspsaga.nvim",
-    event = "LspAttach",
-    config = function()
-      require("lspsaga").setup {
-        lightbulb = {
-          enable = true,
-          sign = true,
-          virtual_text = false,
-        },
-      }
-    end,
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
-  },
-
-  --Fuzzy finder + gui
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-telescope/telescope-ui-select.nvim",
-      {
-        "folke/noice.nvim",
-        config = function()
-          require "configs.noice"
-        end,
-        dependencies = {
-          "MunifTanjim/nui.nvim",
-          "rcarriga/nvim-notify",
-        },
-      },
-    },
-    config = function()
-      require "configs.telescope"
-    end,
-  },
   --TODO: Move every plugin to separate file
   --TODO: Neotest https://github.com/nvim-neotest/neotest
   --JavaScript/Typescript/TSX/JSX  tests : Jest,Vitetest
