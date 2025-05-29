@@ -6,7 +6,6 @@ return {
   "MunifTanjim/nui.nvim",
   "nvim-tree/nvim-web-devicons",
 
-  --TODO: Delete java support after finishing semester
   {
     "mfussenegger/nvim-jdtls",
   },

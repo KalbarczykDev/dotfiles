@@ -48,7 +48,7 @@ return {
               --LSP:
               "phpactor",
               --DAP:
-              "php-debug-adapter",
+              -- "php-debug-adapter", installed manually
               --Linter:
               "phpstan",
               --Formater:
