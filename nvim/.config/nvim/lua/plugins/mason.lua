@@ -95,6 +95,8 @@ return {
               --Lua
               --LSP:
               "lua-language-server",
+              --Linter:
+              "luacheck",
               --Formater:
               "stylua",
 

@@ -119,18 +119,7 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
   },
-  --linters integration to lsp
-  {
-    "nvimtools/none-ls.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    config = function()
-      require "configs.none-ls"
-    end,
-    dependencies = {
 
-      "nvimtools/none-ls-extras.nvim",
-    },
-  },
   --Fuzzy finder + gui
   {
     "nvim-telescope/telescope.nvim",
