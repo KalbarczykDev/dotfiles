@@ -55,6 +55,7 @@ return {
 
       --other
       "prolog",
+      "java",
     },
   },
 }

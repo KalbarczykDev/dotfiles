@@ -148,6 +148,16 @@ return {
               "shellcheck",
               -- Formatter:
               "shfmt",
+
+              --java
+              --lsp
+              "jdtls",
+              --test
+              "java-test",
+              --dap
+              "java-debug-adapter",
+              --Formater
+              "google-java-format",
             },
             auto_update = false,
             run_on_start = true,
