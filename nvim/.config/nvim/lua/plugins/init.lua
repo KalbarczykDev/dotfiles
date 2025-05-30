@@ -16,4 +16,5 @@ return {
   --ANGULAR tests: Jasmine + Karma
   --VUE : Vitetest and Jest
   --TODO: Database https://github.com/kndndrj/nvim-dbee
+  --TODO: Markdown renderer : https://github.com/MeanderingProgrammer/render-markdown.nvim
 }

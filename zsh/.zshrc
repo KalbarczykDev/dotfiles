@@ -43,17 +43,15 @@ alias gd="git diff"
 alias reload="source ~/.zshrc"
 alias zsh="nvim ~/.zshrc"
 
-# ─── PHP Debug Alias ─────────────────────────────────────────────
-alias xphp='php \
-  -dxdebug.mode=debug \
-  -dxdebug.start_with_request=yes \
-  -dxdebug.discover_client_host=true \
-  -dxdebug.client_host=127.0.0.1 \
-  -dxdebug.client_port=9003'
-
+#PHP
 function phpserve {
   local dir="${1:-.}"
   php -S localhost:8000 -t "$dir"
+}
+
+function phpdebug {
+  local dir="${1:-.}"
+  php -dxdebug.mode=debug -S localhost:8000 -t "$dir"
 }
 
 #mysql
