@@ -51,7 +51,14 @@ function phpserve {
 
 function phpdebug {
   local dir="${1:-.}"
-  php -dxdebug.mode=debug -S localhost:8000 -t "$dir"
+  php \
+    -dxdebug.mode=debug \
+    -dxdebug.start_with_request=yes \
+    -dxdebug.discover_client_host=true \
+    -dxdebug.client_host=127.0.0.1 \
+    -dxdebug.client_port=9003 \
+    -S localhost:8000 \
+    -t "$dir"
 }
 
 #mysql

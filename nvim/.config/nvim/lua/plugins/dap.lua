@@ -89,16 +89,8 @@ return {
       --
       -- 2. Install Xdebug:
       --      pecl install xdebug
-      -- 3. Edit your php.ini and add the following:
--     --      zend_extension="xdebug.so"
--     --      xdebug.mode=debug
--     --      xdebug.start_with_request=yes
--     --      xdebug.discover_client_host=true
--     --      xdebug.client_host=127.0.0.1
--     --      xdebug.client_port=9003
--      --
--      -- 4. Run the PHP script with Xdebug enabled:
--      --      php -dxdebug.start_with_request=yes <entry-point>.php or php -dxdebug.mode=debug -S localhost:8000 -t ./
+ 
+-      -- 3. Run the PHP script with Xdebug enabled (check the function in zsh) :
       --  IMPORTANT:
       --    Always run `:lua require'dap'.continue()` in Neovim
       --    BEFORE launching the PHP script to allow Xdebug to connect.
@@ -115,11 +107,6 @@ return {
           request = "launch",
           name = "Listen for Xdebug",
           port = 9003,
-          pathMappings = {
-
-            ["${workspaceFolder}"] = "${workspaceFolder}",
-            ["/var/www/html"] = "${workspaceFolder}",
-          },
         },
       }
 
