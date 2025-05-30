@@ -1,4 +1,3 @@
-
 #homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 
@@ -14,9 +13,8 @@ export PATH="$(npm bin -g):$PATH"
 #config nvim
 export EDITOR=nvim
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 #Aliases
 
@@ -27,7 +25,7 @@ alias vi=nvim
 alias v=nvim
 alias nv=nvim
 
-#Python 
+#Python
 alias python=python3
 alias py=python3
 alias pip=pip3
@@ -45,6 +43,23 @@ alias gd="git diff"
 alias reload="source ~/.zshrc"
 alias zsh="nvim ~/.zshrc"
 
+# ─── PHP Debug Alias ─────────────────────────────────────────────
+alias xphp='php \
+  -dxdebug.mode=debug \
+  -dxdebug.start_with_request=yes \
+  -dxdebug.discover_client_host=true \
+  -dxdebug.client_host=127.0.0.1 \
+  -dxdebug.client_port=9003'
+
+function phpserve {
+  local dir="${1:-.}"
+  php -S localhost:8000 -t "$dir"
+}
+
+#mysql
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
+
 #misc
 alias lah="ls -lah"
 alias gotop="clear && gotop"
@@ -57,4 +72,3 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Zsh Syntax Highlighting (must be last)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
