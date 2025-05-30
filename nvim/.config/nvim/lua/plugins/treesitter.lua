@@ -55,7 +55,11 @@ return {
 
       --other
       "prolog",
+
+      --"java enviroment"
       "java",
+      "groovy",
+      "kotlin",
     },
   },
 }
