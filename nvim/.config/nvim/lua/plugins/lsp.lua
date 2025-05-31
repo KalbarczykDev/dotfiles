@@ -37,8 +37,7 @@ return {
             return util.root_pattern("composer.json", ".git", ".phpactor.json", ".phpactor.yml", ".php")(fname)
               or util.path.dirname(fname)
           end,
-        },
-        --PHP/Laravel/Blade
+        }, --PHP/Laravel/Blade
         volar = true, --vue
         angularls = true, --angular
         html = true, --html

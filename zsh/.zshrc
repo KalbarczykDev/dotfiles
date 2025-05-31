@@ -61,9 +61,32 @@ function phpdebug {
     -t "$dir"
 }
 
-#java (jenv) 
+# Use C++17
+export CXXFLAGS="-std=c++17 -stdlib=libc++"
+export CFLAGS="-isysroot $(xcrun --show-sdk-path)"
+
+# Set PKG_CONFIG_PATH for jpeg and ICU
+export PKG_CONFIG_PATH="/opt/homebrew/opt/jpeg/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/icu4c@77/lib/pkgconfig"
+
+# Set PHP build options
+export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=$(brew --prefix zlib) \
+  --with-bz2=$(brew --prefix bzip2) \
+  --with-curl=$(brew --prefix curl) \
+  --with-iconv=$(brew --prefix libiconv) \
+  --with-libedit=$(brew --prefix libedit) \
+  --with-tidy=$(brew --prefix tidy-html5)"
+
+# Set up phpenv
+export PATH="$HOME/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
+
+
+#jenv (java version manager) 
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+
 
 #misc
 alias lah="ls -lah"
