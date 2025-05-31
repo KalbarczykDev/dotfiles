@@ -14,6 +14,8 @@ return {
         },
       },
       "nvim-neotest/neotest-jest",
+      "marilari88/neotest-vitest",
+      "olimorris/neotest-phpunit",
 
       "nvim-neotest/nvim-nio",
       "nvim-lua/plenary.nvim",
@@ -41,7 +43,12 @@ return {
               return vim.fn.getcwd()
             end,
           },
-          require "neotest-jest",
+          require "neotest-vitest",
+          require "neotest-phpunit" {
+            command = "vendor/bin/phpunit",
+            args = { "--no-configuration", "--no-interaction", "--colors=always" },
+            env = { CI = true },
+          },
         },
       }
     end,

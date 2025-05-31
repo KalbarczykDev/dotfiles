@@ -5,10 +5,4 @@ return {
   "nvzone/menu",
   "MunifTanjim/nui.nvim",
   "nvim-tree/nvim-web-devicons",
-
-  --TODO: Neotest https://github.com/nvim-neotest/neotest
-  --JavaScript/Typescript/TSX/JSX  tests : Jest,Vitetest
-  --PHP tests: PHPUnit
-  --ANGULAR tests: Jasmine + Karma
-  --VUE : Vitetest and Jest
 }
