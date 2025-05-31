@@ -40,6 +40,9 @@ return {
         default_integrations = true,
 
         integrations = {
+          native_lsp = {
+            enabled = true,
+          },
           ufo = true,
           notify = true,
           dap = true,

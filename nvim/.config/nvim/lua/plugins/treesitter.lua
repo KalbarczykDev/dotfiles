@@ -2,64 +2,69 @@ return {
   --Syntax highlighting
   {
     "nvim-treesitter/nvim-treesitter",
+
     event = { "BufReadPost", "BufNewFile" },
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
 
-    highlight = {
-      enable = true,
-      use_languagetree = true,
-      additional_vim_regex_highlighting = false,
-    },
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        highlight = {
+          enable = true,
+          use_languagetree = true,
+          additional_vim_regex_highlighting = false,
+        },
 
-    auto_install = true,
-    indent = { enable = true },
-    ensure_installed = {
-      --web dev languages
-      "javascript",
-      "typescript",
-      "tsx",
-      "php",
+        auto_install = true,
+        indent = { enable = true },
+        ensure_installed = {
+          --web dev languages
+          "javascript",
+          "typescript",
+          "tsx",
+          "php",
 
-      --templates
-      "html",
-      "angular",
-      "blade",
-      "vue",
+          --templates
+          "html",
+          "angular",
+          "blade",
+          "vue",
 
-      --styles
-      "css",
-      "scss",
+          --styles
+          "css",
+          "scss",
 
-      --database
-      "sql",
+          --database
+          "sql",
 
-      --config files
-      "lua",
-      "xml",
-      "yaml",
-      "json",
-      "json5",
-      "toml",
-      "gitignore",
-      "editorconfig",
+          --config files
+          "lua",
+          "xml",
+          "yaml",
+          "json",
+          "json5",
+          "toml",
+          "gitignore",
+          "editorconfig",
 
-      --markdown & docs
-      "markdown",
-      "markdown_inline",
-      "jsdoc",
-      "phpdoc",
+          --markdown & docs
+          "markdown",
+          "markdown_inline",
+          "jsdoc",
+          "phpdoc",
 
-      --Shell
-      "bash",
+          --Shell
+          "bash",
 
-      --other
-      "prolog",
+          --other
+          "prolog",
 
-      --"java enviroment"
-      "java",
-      "groovy",
-      "kotlin",
-    },
+          --"java enviroment"
+          "java",
+          "groovy",
+          "kotlin",
+        },
+      }
+    end,
   },
 }
