@@ -49,7 +49,10 @@ return {
         yamlls = true, --yaml
         jsonls = true, --json
         taplo = true, -- Toml
-        marksman = true, --markdown
+        marksman = {
+          filetypes = { "markdown" },
+        },
+        --markdown
         bashls = true, --shell
       }
 
