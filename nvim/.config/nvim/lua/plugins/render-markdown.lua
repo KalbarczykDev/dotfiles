@@ -8,7 +8,7 @@ return {
     config = function()
       require("render-markdown").setup {
         completions = { lsp = { enabled = true } },
-        render_modes = true,
+        render_modes = { "n", "c" },
         anti_conceal = {
           enabled = true,
           ignore = {
