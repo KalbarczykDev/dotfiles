@@ -61,9 +61,9 @@ function phpdebug {
     -t "$dir"
 }
 
-#mysql
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
+#java (jenv) 
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 #misc
 alias lah="ls -lah"

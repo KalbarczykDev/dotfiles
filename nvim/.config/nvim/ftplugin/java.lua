@@ -2,25 +2,13 @@ local home = os.getenv "HOME"
 local workspace_path = home .. "/.local/share/nvim/jdtls-workspace/"
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = workspace_path .. project_name
+local jenv_path = vim.fn.system("jenv which java"):gsub("\n", "")
 
 local status, jdtls = pcall(require, "jdtls")
 if not status then
   return
 end
 local extendedClientCapabilities = jdtls.extendedClientCapabilities
-
-local os_name = vim.loop.os_uname().sysname
-local config_os
-
-if os_name == "Darwin" then
-  config_os = "mac"
-elseif os_name == "Linux" then
-  config_os = "linux"
-elseif os_name == "Windows_NT" then
-  config_os = "windows"
-else
-  print("Unknown OS: " .. os_name)
-end
 
 local on_attach = function(client, bufnr)
   if vim.lsp.inlay_hint and type(vim.lsp.inlay_hint.enable) == "function" then
@@ -35,7 +23,7 @@ local config = {
   on_attach = on_attach,
 
   cmd = {
-    "java",
+    jenv_path, --if you are not using jenv as version manager just hard code "java" or path to java binary
     "-Declipse.application=org.eclipse.jdt.ls.core.id1",
     "-Dosgi.bundles.defaultStartLevel=4",
     "-Declipse.product=org.eclipse.jdt.ls.core.product",
@@ -51,7 +39,7 @@ local config = {
     "-jar",
     vim.fn.glob(home .. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
     "-configuration",
-    home .. "/.local/share/nvim/mason/packages/jdtls/config_" .. config_os,
+    home .. "/.local/share/nvim/mason/packages/jdtls/config_mac", --NOTE: Change to relevant operating system
     "-data",
     workspace_dir,
   },
@@ -87,7 +75,6 @@ local config = {
         home
           .. "/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
       ),
-      vim.fn.glob(home .. "/.local/share/nvim/mason/packages/java-test/extension/server/*.jar"),
     },
   },
 }

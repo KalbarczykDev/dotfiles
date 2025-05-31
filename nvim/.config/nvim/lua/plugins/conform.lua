@@ -41,6 +41,9 @@ return {
 
         -- TOML
         toml = { "taplo" }, -- taplo has native formatter
+
+        --java
+        java = { "google-java-format" },
       },
     },
   },

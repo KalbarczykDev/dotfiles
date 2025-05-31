@@ -15,6 +15,17 @@ return {
           tailwind = true,
         },
       }
+
+      --attach colorizer to buffer
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "*",
+        callback = function(args)
+          local ok, c = pcall(require, "colorizer")
+          if ok then
+            c.attach_to_buffer(args.buf)
+          end
+        end,
+      })
     end,
   },
   {

@@ -1,4 +1,6 @@
 vim.g.mapleader = " "
+vim.opt.termguicolors = true
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -18,7 +20,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup "plugins"
 require "options"
-require "autocmds"
 vim.schedule(function()
   require "mappings"
 end)
