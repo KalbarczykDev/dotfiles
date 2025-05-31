@@ -5,6 +5,7 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-telescope/telescope-ui-select.nvim",
+      "nvim-telescope/telescope-dap.nvim",
       {
         "folke/noice.nvim",
         config = function()
@@ -75,6 +76,7 @@ return {
       }
       require("telescope").load_extension "ui-select"
       require("telescope").load_extension "noice"
+      require("telescope").load_extension "dap"
     end,
   },
 }
