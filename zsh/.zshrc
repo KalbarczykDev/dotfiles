@@ -1,3 +1,5 @@
+#TODO: Separate to zshprofile and zshrc
+
 #homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 
