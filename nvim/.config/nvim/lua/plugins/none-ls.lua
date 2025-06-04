@@ -84,20 +84,6 @@ return {
             command = "vendor/bin/phpstan",
           },
 
-          null_ls.builtins.diagnostics.phpcs.with {
-            condition = function(utils)
-              if vim.bo.filetype ~= "php" then
-                return false
-              end
-              local enabled = utils.root_has_file(phpcs_root_files)
-              if not enabled then
-                notify("PHPCS skipped — no config found", vim.log.levels.WARN)
-              else
-                notify "PHPCS diagnostics enabled"
-              end
-              return enabled
-            end,
-          },
           -- CSS / SCSS
           null_ls.builtins.diagnostics.stylelint,
 
@@ -114,6 +100,9 @@ return {
               },
             },
           },
+
+          --python
+          require "none-ls.diagnostics.ruff",
 
           -- Markdown
           null_ls.builtins.diagnostics.markdownlint,

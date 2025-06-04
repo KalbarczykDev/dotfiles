@@ -31,6 +31,21 @@ alias nv=nvim
 alias python=python3
 alias py=python3
 alias pip=pip3
+venv() {
+  if [ -f .venv/bin/activate ]; then
+    source .venv/bin/activate
+    echo "Activated .venv"
+  else
+    echo "No .venv found in $(pwd)"
+  fi
+}
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+
+
 
 #Git
 alias gs="git status"
@@ -95,7 +110,6 @@ alias chbug='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
   http://localhost:3000'
 
 
-
 #misc
 alias lah="ls -lah"
 alias gotop="clear && gotop"
@@ -108,3 +122,4 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Zsh Syntax Highlighting (must be last)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+

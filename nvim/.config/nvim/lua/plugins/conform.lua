@@ -5,10 +5,10 @@ return {
     opts = {
       format_on_save = {
         lsp_fallback = true,
-        timeout_ms = 1500,
+        timeout_ms = 3000,
       },
       formatters_by_ft = {
-        -- JavaScript / TypeScript / JSX / TSX / Vue / Angular
+        -- Frontend languages
         javascript = { "prettierd" },
         javascriptreact = { "prettierd" },
         typescript = { "prettierd" },
@@ -17,29 +17,28 @@ return {
         html = { "prettierd" },
         css = { "prettierd" },
         scss = { "prettierd" },
-        json = { "prettierd" },
-        json5 = { "prettierd" },
-        yaml = { "prettierd" },
-        markdown = { "prettierd" },
 
         -- PHP / Laravel / Blade
         php = { "pint" },
         blade = { "blade-formatter" },
 
-        -- Lua
+        -- Scripting languages
         lua = { "stylua" },
+        python = { "black" },
 
-        -- Bash
+        -- Shell
         sh = { "shfmt" },
         bash = { "shfmt" },
 
-        -- XML
+        -- Configs
         xml = { "xmlformatter" },
+        json = { "prettierd" },
+        json5 = { "prettierd" },
+        yaml = { "prettierd" },
+        markdown = { "prettierd" },
+        toml = { "taplo" },
 
-        -- TOML
-        toml = { "taplo" }, -- taplo has native formatter
-
-        --java
+        --jvm
         java = { "google-java-format" },
       },
     },

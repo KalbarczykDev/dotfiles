@@ -144,6 +144,14 @@ return {
               -- Formatter:
               "shfmt",
 
+              --Python
+              -- LSP:
+              "basedpyright",
+              -- Linter:
+              "ruff",
+              -- Formatter:
+              "black",
+
               --java
               --lsp
               "jdtls",

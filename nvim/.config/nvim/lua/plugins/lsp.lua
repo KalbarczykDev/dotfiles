@@ -52,7 +52,37 @@ return {
           filetypes = { "markdown" },
         }, --markdown
         bashls = true, --shell
+        basedpyright = {
+          settings = {
+            basedpyright = {
+              diagnosticMode = "openFilesOnly",
+              inlayHints = {
+                variableTypes = true,
+                functionReturnTypes = true,
+                callArgumentNames = true,
+              },
+              typeCheckingMode = "basic",
+              reportUnknownMemberType = "none",
+              reportMissingTypeStubs = "none",
+              reportPrivateImportUsage = "none",
+              reportUnusedImport = "warning",
+              reportUnusedVariable = "information",
+
+              autoImportCompletions = true,
+            },
+            python = {
+              venvPath = ".",
+              venv = ".venv",
+            },
+          },
+        }, --python
       }
+
+      local function on_attach(client, bufnr)
+        if client.server_capabilities.inlayHintProvider then
+          vim.lsp.inlay_hint.enable()
+        end
+      end
 
       for name, config in pairs(servers) do
         if config == true then
@@ -60,6 +90,7 @@ return {
         end
         config = vim.tbl_deep_extend("force", {}, {
           capabilities = capabilities,
+          on_attach = on_attach,
         }, config)
 
         lspconfig[name].setup(config)
