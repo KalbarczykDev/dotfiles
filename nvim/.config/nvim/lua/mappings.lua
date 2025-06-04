@@ -36,6 +36,9 @@ map("n", "<leader>co", "<cmd>Lspsaga outgoing_calls<CR>", { desc = "Outgoing Cal
 
 map("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { desc = "Toggle Symbols Outline" })
 
+map("n", "<leader>sb", "<cmd>Telescope dap list_breakpoints<CR>", {
+  desc = "Show DAP breakpoints",
+})
 --debugger
 
 map("n", "<Leader>db", dap.toggle_breakpoint, { desc = "DAP Toggle Breakpoint" })

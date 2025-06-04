@@ -101,14 +101,19 @@ return {
           -- CSS / SCSS
           null_ls.builtins.diagnostics.stylelint,
 
-          -- SQL
-          null_ls.builtins.diagnostics.sqlfluff.with {
-
-            extra_args = { "--dialect", "mysql" }, --NOTE: you have to manually set up here the dialect
-          },
-
           -- YAML
-          null_ls.builtins.diagnostics.yamllint,
+          null_ls.builtins.diagnostics.yamllint.with {
+            settings = {
+              yaml = {
+                schemas = {
+                  ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = {
+                    "docker-compose*.yml",
+                    "docker-compose*.yaml",
+                  },
+                },
+              },
+            },
+          },
 
           -- Markdown
           null_ls.builtins.diagnostics.markdownlint,

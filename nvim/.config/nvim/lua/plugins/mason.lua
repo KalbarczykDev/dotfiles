@@ -102,12 +102,6 @@ return {
               --Formater:
               "stylua",
 
-              --SQL
-              --LSP:
-              "sqls",
-              --Linter/Formater:
-              "sqlfluff",
-
               --XML
               --LSP:
               "lemminx",

@@ -44,15 +44,13 @@ return {
         emmet_ls = true, --html snippets
         lua_ls = true, --lua
         cssls = true, --css/scss
-        sqls = true, --sql
         lemminx = true, --xml
         yamlls = true, --yaml
         jsonls = true, --json
         taplo = true, -- Toml
         marksman = {
           filetypes = { "markdown" },
-        },
-        --markdown
+        }, --markdown
         bashls = true, --shell
       }
 
