@@ -90,7 +90,7 @@ return {
               --LSP:
               "css-lsp",
               --Linter:
-              "stylelint",
+              --"stylelint",
               --Formater:
               --prettierd
 

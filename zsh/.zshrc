@@ -109,6 +109,8 @@ alias chbug='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
   --user-data-dir=/tmp/chrome-debug-profile \
   http://localhost:3000'
 
+#remove bg location
+alias rmbg="~/Programming/remove-bg/app.py"
 
 #misc
 alias lah="ls -lah"

@@ -38,7 +38,6 @@ return {
           "sql",
 
           --config files
-          "lua",
           "xml",
           "yaml",
           "json",
@@ -46,6 +45,10 @@ return {
           "toml",
           "gitignore",
           "editorconfig",
+
+          --scripting languages
+          "python",
+          "lua",
 
           --markdown & docs
           "markdown",

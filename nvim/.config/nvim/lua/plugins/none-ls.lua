@@ -85,7 +85,7 @@ return {
           },
 
           -- CSS / SCSS
-          null_ls.builtins.diagnostics.stylelint,
+          -- null_ls.builtins.diagnostics.stylelint,
 
           -- YAML
           null_ls.builtins.diagnostics.yamllint.with {

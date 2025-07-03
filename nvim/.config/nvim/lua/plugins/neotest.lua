@@ -16,6 +16,7 @@ return {
       "nvim-neotest/neotest-jest",
       "marilari88/neotest-vitest",
       "olimorris/neotest-phpunit",
+      "nvim-neotest/neotest-python",
 
       "nvim-neotest/nvim-nio",
       "nvim-lua/plenary.nvim",
@@ -33,7 +34,13 @@ return {
       end
 
       require("neotest").setup {
+
         adapters = {
+
+          --TODO: Fix tests for python
+          require "neotest-python" {
+            python = vim.fn.getcwd() .. "/.venv/bin/python",
+          },
           require "neotest-java",
           require "neotest-jest" {
             jestCommand = "npm test --",
