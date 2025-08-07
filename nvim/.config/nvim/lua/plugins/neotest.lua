@@ -13,6 +13,7 @@ return {
           "theHamsta/nvim-dap-virtual-text",
         },
       },
+
       "nvim-neotest/neotest-jest",
       "marilari88/neotest-vitest",
       "olimorris/neotest-phpunit",
@@ -35,6 +36,12 @@ return {
 
       require("neotest").setup {
 
+        output = {
+          enabled = true,
+          open_on_run = true,
+          open_on_failure = true,
+        },
+
         adapters = {
 
           --TODO: Fix tests for python
@@ -42,6 +49,7 @@ return {
             python = vim.fn.getcwd() .. "/.venv/bin/python",
           },
           require "neotest-java",
+
           require "neotest-jest" {
             jestCommand = "npm test --",
             jestConfigFile = find_jest_config(),

@@ -26,6 +26,7 @@
   "menu": { "branch": "main", "commit": "3c76bdde0be1afe52b370ccfb9c3a12fa93942af" },
   "minty": { "branch": "main", "commit": "aafc9e8e0afe6bf57580858a2849578d8d8db9e0" },
   "neotest": { "branch": "master", "commit": "ef492755730e59e1d8122c461abbd086bee4c76b" },
+  "neotest-gradle": { "branch": "main", "commit": "cfb5d5d7d193631fc2a60244adc78313561c5d0d" },
   "neotest-java": { "branch": "main", "commit": "3cc0bceb0b0957e918939ba95434197e6b3775e7" },
   "neotest-jest": { "branch": "main", "commit": "514fd4eae7da15fd409133086bb8e029b65ac43f" },
   "neotest-phpunit": { "branch": "main", "commit": "baae8dfa0a3aaacd9f0bb6845d6348f5bcdc48bb" },

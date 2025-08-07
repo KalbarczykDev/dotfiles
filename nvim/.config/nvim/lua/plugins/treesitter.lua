@@ -45,6 +45,7 @@ return {
           "toml",
           "gitignore",
           "editorconfig",
+          "ini",
 
           --scripting languages
           "python",
