@@ -4,7 +4,7 @@ local config = wezterm.config_builder()
 
 --font
 config.font = wezterm.font("JetBrainsMonoNL Nerd Font Mono", { weight = "Regular" })
-config.font_size = 17
+config.font_size = 18
 
 --topbar
 config.enable_tab_bar = false
@@ -23,46 +23,46 @@ config.color_scheme = "Catppuccin Mocha"
 
 -- Keybindings
 config.keys = {
-  {
-    key = "e",
-    mods = "CTRL",
-    action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
-  },
-  {
-    key = "d",
-    mods = "CTRL",
-    action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-  },
-  {
-    key = "w",
-    mods = "CTRL",
-    action = wezterm.action.CloseCurrentPane({ confirm = true }),
-  },
-  {
-    key = "h",
-    mods = "CTRL",
-    action = wezterm.action.ActivatePaneDirection("Left"),
-  },
-  {
-    key = "l",
-    mods = "CTRL",
-    action = wezterm.action.ActivatePaneDirection("Right"),
-  },
-  {
-    key = "j",
-    mods = "CTRL",
-    action = wezterm.action.ActivatePaneDirection("Up"),
-  },
-  {
-    key = "k",
-    mods = "CTRL",
-    action = wezterm.action.ActivatePaneDirection("Down"),
-  },
-  {
-    key = "t",
-    mods = "CMD",
-    action = wezterm.action.SpawnTab("CurrentPaneDomain"),
-  },
+	{
+		key = "e",
+		mods = "CTRL",
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "d",
+		mods = "CTRL",
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "w",
+		mods = "CTRL",
+		action = wezterm.action.CloseCurrentPane({ confirm = true }),
+	},
+	{
+		key = "h",
+		mods = "CTRL",
+		action = wezterm.action.ActivatePaneDirection("Left"),
+	},
+	{
+		key = "l",
+		mods = "CTRL",
+		action = wezterm.action.ActivatePaneDirection("Right"),
+	},
+	{
+		key = "j",
+		mods = "CTRL",
+		action = wezterm.action.ActivatePaneDirection("Up"),
+	},
+	{
+		key = "k",
+		mods = "CTRL",
+		action = wezterm.action.ActivatePaneDirection("Down"),
+	},
+	{
+		key = "t",
+		mods = "CMD",
+		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
+	},
 }
 
 --autostart

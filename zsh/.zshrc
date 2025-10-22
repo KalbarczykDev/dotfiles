@@ -27,26 +27,6 @@ alias vi=nvim
 alias v=nvim
 alias nv=nvim
 
-#Python
-alias python=python3
-alias py=python3
-alias pip=pip3
-venv() {
-  if [ -f .venv/bin/activate ]; then
-    source .venv/bin/activate
-    echo "Activated .venv"
-  else
-    echo "No .venv found in $(pwd)"
-  fi
-}
-
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-
-
-
-
 #Git
 alias gs="git status"
 alias ga="git add ."
@@ -60,46 +40,9 @@ alias gd="git diff"
 alias reload="source ~/.zshrc"
 alias zsh="nvim ~/.zshrc"
 
-#PHP
-function phpserve {
-  local dir="${1:-.}"
-  php -S localhost:8000 -t "$dir"
-}
+#docker
 
-function phpdebug {
-  local dir="${1:-.}"
-  php \
-    -dxdebug.mode=debug \
-    -dxdebug.start_with_request=yes \
-    -dxdebug.discover_client_host=true \
-    -dxdebug.client_host=127.0.0.1 \
-    -dxdebug.client_port=9003 \
-    -S localhost:8000 \
-    -t "$dir"
-}
-
-# Use C++17
-export CXXFLAGS="-std=c++17 -stdlib=libc++"
-export CFLAGS="-isysroot $(xcrun --show-sdk-path)"
-
-# Set PKG_CONFIG_PATH for jpeg and ICU
-export PKG_CONFIG_PATH="/opt/homebrew/opt/jpeg/lib/pkgconfig"
-export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/icu4c@77/lib/pkgconfig"
-
-# Set PHP build options
-export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=$(brew --prefix zlib) \
-  --with-bz2=$(brew --prefix bzip2) \
-  --with-curl=$(brew --prefix curl) \
-  --with-iconv=$(brew --prefix libiconv) \
-  --with-libedit=$(brew --prefix libedit) \
-  --with-tidy=$(brew --prefix tidy-html5)"
-
-# Set up phpenv
-export PATH="$HOME/.phpenv/bin:$PATH"
-eval "$(phpenv init -)"
-
-
-
+alias docker-rebuild="docker compose down -v && docker compose up --build"
 
 #spring boot
 spring-run() {
@@ -139,8 +82,6 @@ alias chbug='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
   --user-data-dir=/tmp/chrome-debug-profile \
   http://localhost:3000'
 
-#remove bg location
-alias rmbg="~/Programming/remove-bg/app.py"
 
 #misc
 alias lah="ls -lah"

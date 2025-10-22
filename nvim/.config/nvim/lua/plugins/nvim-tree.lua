@@ -16,7 +16,7 @@ return {
         sync_root_with_cwd = true,
 
         view = {
-          width = 50,
+          width = 40,
           side = "left",
           preserve_window_proportions = true,
         },
