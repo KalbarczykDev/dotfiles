@@ -3,8 +3,8 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 --font
-config.font = wezterm.font("JetBrainsMonoNL Nerd Font Mono", { weight = "Regular" })
-config.font_size = 18
+config.font = wezterm.font("JetBrains Mono", { weight = "Regular" })
+config.font_size = 20
 
 --topbar
 config.enable_tab_bar = false
