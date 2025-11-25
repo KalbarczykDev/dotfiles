@@ -1,10 +1,10 @@
-#TODO: Clean up
+
+PROMPT='%F{cyan}%n%f %F{magenta}%~%f %F{yellow}›%f '
+
 
 #homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 
-#starship prompt
-eval "$(starship init zsh)"
 
 # node
 export NVM_DIR="$HOME/.nvm"
@@ -74,15 +74,6 @@ alias mvn-build-skip-tests="./mvnw clean install -DskipTests"
 alias mvn-deps="./mvnw dependency:tree"
 alias mvn-refresh="./mvnw clean install -U"
 
-
-
-#chrome debug session (mac only)
-alias chbug='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
-  --remote-debugging-port=9222 \
-  --user-data-dir=/tmp/chrome-debug-profile \
-  http://localhost:3000'
-
-
 #misc
 alias lah="ls -lah"
 alias gotop="clear && gotop"
@@ -107,5 +98,3 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-# Created by `pipx` on 2025-07-06 15:17:35
-export PATH="$PATH:/Users/oskalbarczyk/.local/bin"
