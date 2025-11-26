@@ -82,33 +82,6 @@ return {
       end
 
       --list debuggers
-      --[[ ── PHP Debug Setup ──
-      -- NOTE: For a new device setup
-      --
-      -- 1. Clone the project repository and build dependencies
-      --
-      -- 2. Install Xdebug:
-      --      pecl install xdebug
- 
--      -- 3. Run the PHP script with Xdebug enabled (check the function in zsh) :
-      --  IMPORTANT:
-      --    Always run `:lua require'dap'.continue()` in Neovim
-      --    BEFORE launching the PHP script to allow Xdebug to connect.
---]]
-      dap.adapters.php = {
-        type = "executable",
-        command = "node",
-        args = { os.getenv "HOME" .. "/vscode-php-debug/out/phpDebug.js" },
-      }
-
-      dap.configurations.php = {
-        {
-          type = "php",
-          request = "launch",
-          name = "Listen for Xdebug",
-          port = 9003,
-        },
-      }
 
       -- ── JS/TS Debug Setup ──
       -- NOTE: Must build the adapters before first use

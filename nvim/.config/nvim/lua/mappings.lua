@@ -1,6 +1,5 @@
 local map = vim.keymap.set
 local dap = require "dap"
-local neotest = require "neotest"
 local dapui = require "dapui"
 
 --tabs
@@ -94,18 +93,3 @@ end, { desc = "whichkey query lookup" })
 map("n", "<leader>ce", ":Copilot enable<CR>", { desc = "Copilot: Enable" })
 map("n", "<leader>cd", ":Copilot disable<CR>", { desc = "Copilot: Disable" })
 map("n", "<leader>cs", ":Copilot status<CR>", { desc = "Copilot: Status" })
-
---neotest
-map("n", "<leader>tn", function()
-  neotest.run.run()
-end, { desc = "Run nearest test" })
-
-map("n", "<leader>tf", function()
-  neotest.run.run(vim.fn.expand "%")
-end, { desc = "Run test file" })
-
-map("n", "<leader>ts", neotest.summary.toggle, { desc = "Toggle test summary" })
-map("n", "<leader>to", neotest.output.open, { desc = "Open test output" })
-map("n", "<leader>dt", function()
-  neotest.run.run { strategy = "dap" }
-end, { desc = "Debug nearest test" })

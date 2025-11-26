@@ -18,10 +18,6 @@ return {
         css = { "prettierd" },
         scss = { "prettierd" },
 
-        -- PHP / Laravel / Blade
-        php = { "pint" },
-        blade = { "blade-formatter" },
-
         -- Scripting languages
         lua = { "stylua" },
         python = { "black" },

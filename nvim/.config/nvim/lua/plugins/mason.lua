@@ -45,19 +45,6 @@ return {
               --Formater:
               "prettierd",
 
-              --PHP/Laravel/Blade
-              --LSP:
-              "phpactor",
-              --DAP:
-              -- "php-debug-adapter", installed manually
-              --Linter:
-              "phpstan",
-              --Formater:
-              "pint",
-              "blade-formatter", -- blade template
-              --Aditional diagnostics:
-              "phpcs",
-
               --Vue
               --LSP:
               "vue-language-server",

@@ -26,12 +26,6 @@ return {
         "typescriptreact",
       }
 
-      local phpcs_root_files = {
-        "phpcs.xml",
-        ".phpcs.xml",
-        "phpcs.xml.dist",
-      }
-
       null_ls.setup {
         sources = {
           -- JS/TS
@@ -61,27 +55,6 @@ return {
               end
               return enabled
             end,
-          },
-
-          -- PHP / Laravel
-          null_ls.builtins.diagnostics.phpstan.with {
-            condition = function(utils)
-              if vim.bo.filetype ~= "php" then
-                return false
-              end
-
-              local has_vendor = vim.fn.filereadable "vendor/bin/phpstan" == 1
-              local has_config = utils.root_has_file { "phpstan.neon", "phpstan.neon.dist" }
-
-              if not has_vendor or not has_config then
-                notify("PHPStan skipped — missing config or vendor/bin/phpstan", vim.log.levels.WARN)
-                return false
-              end
-
-              notify("null-ls", "PHPStan diagnostics enabled")
-              return true
-            end,
-            command = "vendor/bin/phpstan",
           },
 
           -- CSS / SCSS

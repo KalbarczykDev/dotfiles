@@ -22,7 +22,6 @@ return {
           "javascript",
           "typescript",
           "tsx",
-          "php",
 
           --templates
           "html",
@@ -55,7 +54,6 @@ return {
           "markdown",
           "markdown_inline",
           "jsdoc",
-          "phpdoc",
 
           --Shell
           "bash",

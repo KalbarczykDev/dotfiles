@@ -15,7 +15,7 @@ return {
       local capabilities =
         vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
       local lspconfig = require "lspconfig"
-      local util = require "lspconfig.util"
+
       vim.diagnostic.config {
         virtual_text = true,
 
@@ -30,14 +30,6 @@ return {
       local servers = {
         ts_ls = true, --JS/TS/TSX and JSX
 
-        phpactor = {
-          cmd = { "phpactor", "language-server" },
-          filetypes = { "php" },
-          root_dir = function(fname)
-            return util.root_pattern("composer.json", ".git", ".phpactor.json", ".phpactor.yml", ".php")(fname)
-              or util.path.dirname(fname)
-          end,
-        }, --PHP/Laravel/Blade
         volar = true, --vue
         angularls = true, --angular
         html = true, --html
