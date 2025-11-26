@@ -26,8 +26,6 @@ return {
           --templates
           "html",
           "angular",
-          "blade",
-          "vue",
 
           --styles
           "css",
@@ -57,9 +55,6 @@ return {
 
           --Shell
           "bash",
-
-          --other
-          "prolog",
 
           --"java enviroment"
           "java",

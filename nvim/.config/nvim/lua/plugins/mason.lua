@@ -45,16 +45,6 @@ return {
               --Formater:
               "prettierd",
 
-              --Vue
-              --LSP:
-              "vue-language-server",
-              --DAP:
-              --js-debug-adapter
-              --Linter:
-              --eslint
-              --Formater:
-              --prettierd
-
               --Angular
               --LSP:
               "angular-language-server",

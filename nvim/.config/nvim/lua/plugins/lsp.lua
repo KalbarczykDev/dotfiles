@@ -29,8 +29,6 @@ return {
 
       local servers = {
         ts_ls = true, --JS/TS/TSX and JSX
-
-        volar = true, --vue
         angularls = true, --angular
         html = true, --html
         emmet_ls = true, --html snippets
