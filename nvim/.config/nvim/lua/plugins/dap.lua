@@ -88,17 +88,12 @@ return {
       --
       -- 1. Install the adapter (via Mason):
       --      :MasonInstall js-debug-adapter
-      --      :MasonInstall chrome-debug-adapter
       --
       -- 2. Build the JS Debug Adapter:
       --      cd ~/.local/share/nvim/mason/packages/js-debug-adapter
       --      npm install --legacy-peer-deps
-      -- 3.  Build the Chrome Debug Adapter:
-      --     cd ~/.local/share/nvim/mason/packages/chrome-debug-adapter
-      --     npm install --legacy-peer-deps
-      --     npm run build
       --
-      -- 4. Confirm the path to the adapter:
+      -- 3. Confirm the path to the adapter:
       --      ~/.local/share/nvim/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js
       --
 
@@ -115,18 +110,6 @@ return {
         },
       }
 
-      --Chmrome debugger usage
-      --set breakpoint
-      --run app eg npx serve .
-      --open chrome with debug flags (look zsh alias)
-      --dap continue and select "Attach to chrome" in the prompt
-
-      dap.adapters.chrome = {
-        type = "executable",
-        command = "node",
-        args = { os.getenv "HOME" .. "/.local/share/nvim/mason/packages/chrome-debug-adapter/out/src/chromeDebug.js" },
-      }
-
       for _, language in ipairs { "typescript", "javascript", "javascriptreact", "typescriptreact" } do
         dap.configurations[language] = {
           {
@@ -136,17 +119,6 @@ return {
             program = "${file}",
             cwd = "${workspaceFolder}",
             runtimeExecutable = "node",
-          },
-          {
-            name = "Attach to chrome",
-            type = "chrome",
-            request = "attach",
-            program = "${file}",
-            cwd = vim.fn.getcwd(),
-            sourceMaps = true,
-            protocol = "inspector",
-            port = 9222,
-            webRoot = "${workspaceFolder}",
           },
         }
       end

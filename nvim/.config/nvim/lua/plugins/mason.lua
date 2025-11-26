@@ -39,7 +39,6 @@ return {
               "typescript-language-server",
               --DAP:
               "js-debug-adapter", --node
-              "chrome-debug-adapter", --browser
               --Linter:
               "eslint_d",
               --Formater:
