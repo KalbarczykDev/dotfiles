@@ -137,6 +137,12 @@ return {
               "java-debug-adapter",
               --Formater
               "google-java-format",
+
+              --c/c++
+              --LSP:
+              "clangd",
+              --Formatter:
+              "clang-format",
             },
             auto_update = false,
             run_on_start = true,

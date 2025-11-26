@@ -60,6 +60,10 @@ return {
           "java",
           "groovy",
           "kotlin",
+
+          --c/c++
+          "c",
+          "cpp",
         },
       }
     end,

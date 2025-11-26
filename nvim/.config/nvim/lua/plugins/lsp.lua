@@ -28,6 +28,9 @@ return {
       }
 
       local servers = {
+        clangd = {
+          cmd = { "clangd", "--background-index", "--clang-tidy" },
+        }, --c/cpp
         ts_ls = true, --JS/TS/TSX and JSX
         angularls = true, --angular
         html = true, --html

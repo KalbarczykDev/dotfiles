@@ -82,7 +82,6 @@ return {
       end
 
       --list debuggers
-
       -- ── JS/TS Debug Setup ──
       -- NOTE: Must build the adapters before first use
       --

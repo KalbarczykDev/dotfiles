@@ -35,6 +35,10 @@ return {
 
         --jvm
         java = { "google-java-format" },
+
+        -- C/C++
+        c = { "clang-format" },
+        cpp = { "clang-format" },
       },
     },
   },
