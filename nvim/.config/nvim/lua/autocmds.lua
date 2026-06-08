@@ -16,6 +16,10 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Detect docker compose files so docker_compose_language_service attaches
 vim.filetype.add {
+  extension = {
+    mmd = "mermaid",
+    mermaid = "mermaid",
+  },
   pattern = {
     ["[Dd]ocker%-?[Cc]ompose.*%.ya?ml"] = "yaml.docker-compose",
     ["[Cc]ompose.*%.ya?ml"] = "yaml.docker-compose",

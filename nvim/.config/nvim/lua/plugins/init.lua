@@ -7,5 +7,4 @@ return {
   "nvim-tree/nvim-web-devicons",
 }
 
--- TODO: Add support for Mermaid Diagrams
 -- TODO: Add support for PHP
