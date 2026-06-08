@@ -26,6 +26,12 @@ return {
         "typescriptreact",
       }
 
+      local phpstan_root_files = {
+        "phpstan.neon",
+        "phpstan.neon.dist",
+        "phpstan.dist.neon",
+      }
+
       null_ls.setup {
         sources = {
           -- JS/TS
@@ -79,6 +85,20 @@ return {
 
           -- Docker
           null_ls.builtins.diagnostics.hadolint,
+
+          -- PHP
+          null_ls.builtins.diagnostics.phpstan.with {
+            condition = function(utils)
+              if vim.bo.filetype ~= "php" then
+                return false
+              end
+              local enabled = utils.root_has_file(phpstan_root_files)
+              if not enabled then
+                notify("null-ls", "phpstan skipped — no config found", vim.log.levels.WARN)
+              end
+              return enabled
+            end,
+          },
 
           --shell
           --shellcheck not needed expicite

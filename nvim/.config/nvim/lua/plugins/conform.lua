@@ -22,6 +22,7 @@ return {
         -- Scripting languages
         lua = { "stylua" },
         python = { "black" },
+        php = { "php_cs_fixer" },
 
         -- Shell
         sh = { "shfmt" },

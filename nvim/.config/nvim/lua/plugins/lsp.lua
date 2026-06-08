@@ -47,6 +47,7 @@ return {
         bashls = true, --shell
         dockerls = true, --dockerfile
         docker_compose_language_service = true, --docker compose
+        phpactor = true, --php
         basedpyright = {
           settings = {
             basedpyright = {

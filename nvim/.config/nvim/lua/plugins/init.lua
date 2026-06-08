@@ -6,5 +6,3 @@ return {
   "MunifTanjim/nui.nvim",
   "nvim-tree/nvim-web-devicons",
 }
-
--- TODO: Add support for PHP

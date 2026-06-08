@@ -141,6 +141,16 @@ return {
               "docker-compose-language-service",
               --Linter:
               "hadolint",
+
+              --PHP
+              --LSP:
+              "phpactor",
+              --DAP:
+              "php-debug-adapter",
+              --Linter:
+              "phpstan",
+              --Formatter:
+              "php-cs-fixer",
             },
             auto_update = false,
             run_on_start = true,

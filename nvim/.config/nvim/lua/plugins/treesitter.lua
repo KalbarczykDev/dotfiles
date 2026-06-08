@@ -48,6 +48,8 @@ return {
           --scripting languages
           "python",
           "lua",
+          "php",
+          "phpdoc",
 
           --markdown & docs
           "markdown",
