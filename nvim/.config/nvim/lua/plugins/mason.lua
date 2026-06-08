@@ -58,7 +58,7 @@ return {
               --LSP:
               "html-lsp",
               --Snippets:
-              "emmet_ls",
+              "emmet-ls",
               --Formater:
               --prettierd
 

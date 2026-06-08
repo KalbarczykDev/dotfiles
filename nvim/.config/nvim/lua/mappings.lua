@@ -1,7 +1,4 @@
 local map = vim.keymap.set
-local dap = require "dap"
-local dapui = require "dapui"
-local neotest = require "neotest"
 
 --tabs
 map("n", "<Tab>", "<Cmd>BufferNext<CR>", { desc = "Next buffer" })
@@ -41,13 +38,13 @@ map("n", "<leader>sb", "<cmd>Telescope dap list_breakpoints<CR>", {
 })
 --debugger
 
-map("n", "<Leader>db", dap.toggle_breakpoint, { desc = "DAP Toggle Breakpoint" })
-map("n", "<Leader>dc", dap.continue, { desc = "DAP Continue" })
-map("n", "<Leader>do", dap.step_over, { desc = "DAP Step Over" })
-map("n", "<Leader>di", dap.step_into, { desc = "DAP Step Into" })
-map("n", "<Leader>dO", dap.step_out, { desc = "DAP Step Out" })
-map("n", "<Leader>dr", dap.repl.toggle, { desc = "DAP Toggle REPL" })
-map("n", "<Leader>du", dapui.toggle, { desc = "DAP UI Toggle" })
+map("n", "<Leader>db", function() require("dap").toggle_breakpoint() end, { desc = "DAP Toggle Breakpoint" })
+map("n", "<Leader>dc", function() require("dap").continue() end, { desc = "DAP Continue" })
+map("n", "<Leader>do", function() require("dap").step_over() end, { desc = "DAP Step Over" })
+map("n", "<Leader>di", function() require("dap").step_into() end, { desc = "DAP Step Into" })
+map("n", "<Leader>dO", function() require("dap").step_out() end, { desc = "DAP Step Out" })
+map("n", "<Leader>dr", function() require("dap").repl.toggle() end, { desc = "DAP Toggle REPL" })
+map("n", "<Leader>du", function() require("dapui").toggle() end, { desc = "DAP UI Toggle" })
 
 -- spell checker
 map("n", "<leader>ss", function()
@@ -97,15 +94,19 @@ map("n", "<leader>cs", ":Copilot status<CR>", { desc = "Copilot: Status" })
 
 --neotest
 map("n", "<leader>tn", function()
-  neotest.run.run()
+  require("neotest").run.run()
 end, { desc = "Run nearest test" })
 
 map("n", "<leader>tf", function()
-  neotest.run.run(vim.fn.expand "%")
+  require("neotest").run.run(vim.fn.expand "%")
 end, { desc = "Run test file" })
 
-map("n", "<leader>ts", neotest.summary.toggle, { desc = "Toggle test summary" })
-map("n", "<leader>to", neotest.output.open, { desc = "Open test output" })
+map("n", "<leader>ts", function()
+  require("neotest").summary.toggle()
+end, { desc = "Toggle test summary" })
+map("n", "<leader>to", function()
+  require("neotest").output.open()
+end, { desc = "Open test output" })
 map("n", "<leader>dt", function()
-  neotest.run.run { strategy = "dap" }
+  require("neotest").run.run { strategy = "dap" }
 end, { desc = "Debug nearest test" })

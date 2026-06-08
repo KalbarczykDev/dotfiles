@@ -33,9 +33,6 @@ return {
         markdown = { "prettierd" },
         toml = { "taplo" },
 
-        --jvm
-        java = { "google-java-format" },
-
         -- C/C++
         c = { "clang-format" },
         cpp = { "clang-format" },

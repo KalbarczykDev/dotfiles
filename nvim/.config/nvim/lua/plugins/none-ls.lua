@@ -37,8 +37,9 @@ return {
               local enabled = utils.root_has_file(eslint_root_files)
               if not enabled then
                 notify("null-ls", "ESLint skipped — no config found", vim.log.levels.WARN)
+              else
+                notify("null-ls", "ESLint diagnostics enabled")
               end
-              utils.notify("null-ls", "ESLint diagnostics enabled")
               return enabled
             end,
           },

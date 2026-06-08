@@ -56,11 +56,6 @@ return {
           --Shell
           "bash",
 
-          --"java enviroment"
-          "java",
-          "groovy",
-          "kotlin",
-
           --c/c++
           "c",
           "cpp",
