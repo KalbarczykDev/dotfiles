@@ -45,6 +45,8 @@ return {
           filetypes = { "markdown" },
         }, --markdown
         bashls = true, --shell
+        dockerls = true, --dockerfile
+        docker_compose_language_service = true, --docker compose
         basedpyright = {
           settings = {
             basedpyright = {

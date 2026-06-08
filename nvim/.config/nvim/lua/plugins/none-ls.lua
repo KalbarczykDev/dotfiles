@@ -77,6 +77,9 @@ return {
           -- Markdown
           null_ls.builtins.diagnostics.markdownlint,
 
+          -- Docker
+          null_ls.builtins.diagnostics.hadolint,
+
           --shell
           --shellcheck not needed expicite
 

@@ -43,6 +43,7 @@ return {
           "gitignore",
           "editorconfig",
           "ini",
+          "dockerfile",
 
           --scripting languages
           "python",

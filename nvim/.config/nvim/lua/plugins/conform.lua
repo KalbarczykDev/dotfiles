@@ -35,6 +35,9 @@ return {
         markdown = { "prettierd" },
         toml = { "taplo" },
 
+        -- Docker (compose files use the yaml.docker-compose filetype)
+        ["yaml.docker-compose"] = { "prettierd" },
+
         -- C/C++
         c = { "clang-format" },
         cpp = { "clang-format" },

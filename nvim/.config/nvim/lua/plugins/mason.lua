@@ -134,6 +134,13 @@ return {
               "clangd",
               --Formatter:
               "clang-format",
+
+              --Docker
+              --LSP:
+              "dockerfile-language-server",
+              "docker-compose-language-service",
+              --Linter:
+              "hadolint",
             },
             auto_update = false,
             run_on_start = true,

@@ -13,3 +13,13 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.spelllang = "en_us"
   end,
 })
+
+-- Detect docker compose files so docker_compose_language_service attaches
+vim.filetype.add {
+  pattern = {
+    ["[Dd]ocker%-?[Cc]ompose.*%.ya?ml"] = "yaml.docker-compose",
+    ["[Cc]ompose.*%.ya?ml"] = "yaml.docker-compose",
+  },
+}
+-- Keep yaml treesitter highlighting on the compound filetype
+vim.treesitter.language.register("yaml", "yaml.docker-compose")
