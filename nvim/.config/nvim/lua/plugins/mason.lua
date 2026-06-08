@@ -128,16 +128,6 @@ return {
               -- Formatter:
               "black",
 
-              --java
-              --lsp
-              "jdtls",
-              --test
-              "java-test",
-              --dap
-              "java-debug-adapter",
-              --Formater
-              "google-java-format",
-
               --c/c++
               --LSP:
               "clangd",

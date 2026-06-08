@@ -2,18 +2,6 @@ return {
   {
     "nvim-neotest/neotest",
     dependencies = {
-      {
-        --NOTE: run this command before using on new device :NeotestJava setup
-        "rcasia/neotest-java",
-        ft = "java",
-        dependencies = {
-          "mfussenegger/nvim-jdtls",
-          "mfussenegger/nvim-dap",
-          "rcarriga/nvim-dap-ui",
-          "theHamsta/nvim-dap-virtual-text",
-        },
-      },
-
       "nvim-neotest/neotest-jest",
       "marilari88/neotest-vitest",
       "olimorris/neotest-phpunit",
@@ -48,8 +36,6 @@ return {
           require "neotest-python" {
             python = vim.fn.getcwd() .. "/.venv/bin/python",
           },
-          require "neotest-java",
-
           require "neotest-jest" {
             jestCommand = "npm test --",
             jestConfigFile = find_jest_config(),
