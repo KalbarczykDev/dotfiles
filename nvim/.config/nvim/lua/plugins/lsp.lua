@@ -11,10 +11,11 @@ return {
         [vim.diagnostic.severity.INFO] = "",
       }
 
-      local cmp_lsp = require "cmp_nvim_lsp"
-      local capabilities =
-        vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
-      local lspconfig = require "lspconfig"
+      local capabilities = vim.tbl_deep_extend(
+        "force",
+        vim.lsp.protocol.make_client_capabilities(),
+        require("cmp_nvim_lsp").default_capabilities()
+      )
 
       vim.diagnostic.config {
         virtual_text = true,
@@ -27,27 +28,19 @@ return {
         severity_sort = true,
       }
 
-      local servers = {
+      -- shared defaults applied to every server (nvim 0.11 native API)
+      vim.lsp.config("*", {
+        capabilities = capabilities,
+      })
+
+      -- per-server overrides; servers without overrides are just enabled below
+      local overrides = {
         clangd = {
           cmd = { "clangd", "--background-index", "--clang-tidy" },
         }, --c/cpp
-        ts_ls = true, --JS/TS/TSX and JSX
-        angularls = true, --angular
-        html = true, --html
-        emmet_ls = true, --html snippets
-        lua_ls = true, --lua
-        cssls = true, --css/scss
-        lemminx = true, --xml
-        yamlls = true, --yaml
-        jsonls = true, --json
-        taplo = true, -- Toml
         marksman = {
           filetypes = { "markdown" },
         }, --markdown
-        bashls = true, --shell
-        dockerls = true, --dockerfile
-        docker_compose_language_service = true, --docker compose
-        phpactor = true, --php
         basedpyright = {
           settings = {
             basedpyright = {
@@ -73,24 +66,39 @@ return {
           },
         }, --python
       }
-
-      local function on_attach(client, bufnr)
-        if client.server_capabilities.inlayHintProvider then
-          vim.lsp.inlay_hint.enable()
-        end
+      for name, cfg in pairs(overrides) do
+        vim.lsp.config(name, cfg)
       end
 
-      for name, config in pairs(servers) do
-        if config == true then
-          config = {}
-        end
-        config = vim.tbl_deep_extend("force", {}, {
-          capabilities = capabilities,
-          on_attach = on_attach,
-        }, config)
+      vim.lsp.enable {
+        "clangd", --c/cpp
+        "ts_ls", --JS/TS/TSX and JSX
+        "angularls", --angular
+        "html", --html
+        "emmet_ls", --html snippets
+        "lua_ls", --lua
+        "cssls", --css/scss
+        "lemminx", --xml
+        "yamlls", --yaml
+        "jsonls", --json
+        "taplo", --toml
+        "marksman", --markdown
+        "bashls", --shell
+        "dockerls", --dockerfile
+        "docker_compose_language_service", --docker compose
+        "phpactor", --php
+        "basedpyright", --python
+      }
 
-        lspconfig[name].setup(config)
-      end
+      -- enable inlay hints once a server that supports them attaches
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(args)
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
+          if client and client.server_capabilities.inlayHintProvider then
+            vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
+          end
+        end,
+      })
     end,
   },
   {
