@@ -25,7 +25,7 @@ return {
             hidden = true,
           },
         },
-        extensions_list = { "themes", "terms" },
+        extensions_list = { "themes" },
         extensions = {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown {},

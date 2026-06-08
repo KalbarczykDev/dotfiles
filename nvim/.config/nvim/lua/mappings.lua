@@ -78,7 +78,17 @@ map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "telescope find o
 map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "telescope find in current buffer" })
 map("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", { desc = "telescope git commits" })
 map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
-map("n", "<leader>pt", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
+map("n", "<leader>pt", "<cmd>TermSelect<CR>", { desc = "pick terminal" })
+
+-- terminal (toggleterm)
+map({ "n", "t" }, "<C-/>", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
+map("n", "<leader>Tf", "<cmd>ToggleTerm direction=float<CR>", { desc = "Terminal: float" })
+map("n", "<leader>Th", "<cmd>ToggleTerm direction=horizontal<CR>", { desc = "Terminal: horizontal" })
+map("n", "<leader>Tv", "<cmd>ToggleTerm direction=vertical<CR>", { desc = "Terminal: vertical" })
+map("t", "<C-h>", [[<Cmd>wincmd h<CR>]], { desc = "Terminal: window left" })
+map("t", "<C-j>", [[<Cmd>wincmd j<CR>]], { desc = "Terminal: window down" })
+map("t", "<C-k>", [[<Cmd>wincmd k<CR>]], { desc = "Terminal: window up" })
+map("t", "<C-l>", [[<Cmd>wincmd l<CR>]], { desc = "Terminal: window right" })
 
 -- whichkey
 map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })

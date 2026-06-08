@@ -55,6 +55,14 @@ return {
             end,
           },
           require "neotest-vitest",
+          require "neotest-phpunit" {
+            dap = {
+              type = "php",
+              request = "launch",
+              name = "Debug PHPUnit (neotest)",
+              port = 9003,
+            },
+          },
         },
       }
     end,
