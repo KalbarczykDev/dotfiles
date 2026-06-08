@@ -2,32 +2,12 @@ return {
   --Fuzzy finder + gui
   {
     "nvim-telescope/telescope.nvim",
+    cmd = "Telescope",
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-telescope/telescope-ui-select.nvim",
       "nvim-telescope/telescope-dap.nvim",
-      {
-        "folke/noice.nvim",
-        config = function()
-          require("noice").setup {
-            lsp = {
-              hover = {
-                enabled = false,
-              },
-              signature = {
-                enabled = false,
-              },
-              progress = {
-                enabled = false,
-              },
-            },
-          }
-        end,
-        dependencies = {
-          "MunifTanjim/nui.nvim",
-          "rcarriga/nvim-notify",
-        },
-      },
+      "folke/noice.nvim",
     },
     config = function()
       local actions = require "telescope.actions"

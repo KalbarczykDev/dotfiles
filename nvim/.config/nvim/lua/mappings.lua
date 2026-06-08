@@ -88,9 +88,9 @@ map("n", "<leader>wk", function()
 end, { desc = "whichkey query lookup" })
 
 -- copilot
-map("n", "<leader>ce", ":Copilot enable<CR>", { desc = "Copilot: Enable" })
-map("n", "<leader>cd", ":Copilot disable<CR>", { desc = "Copilot: Disable" })
-map("n", "<leader>cs", ":Copilot status<CR>", { desc = "Copilot: Status" })
+map("n", "<leader>cpe", ":Copilot enable<CR>", { desc = "Copilot: Enable" })
+map("n", "<leader>cpd", ":Copilot disable<CR>", { desc = "Copilot: Disable" })
+map("n", "<leader>cps", ":Copilot status<CR>", { desc = "Copilot: Status" })
 
 --neotest
 map("n", "<leader>tn", function()
@@ -110,3 +110,29 @@ end, { desc = "Open test output" })
 map("n", "<leader>dt", function()
   require("neotest").run.run { strategy = "dap" }
 end, { desc = "Debug nearest test" })
+
+-- gitsigns (hunks)
+map("n", "]h", function()
+  require("gitsigns").nav_hunk "next"
+end, { desc = "Next git hunk" })
+map("n", "[h", function()
+  require("gitsigns").nav_hunk "prev"
+end, { desc = "Prev git hunk" })
+map("n", "<leader>hs", function()
+  require("gitsigns").stage_hunk()
+end, { desc = "Stage hunk" })
+map("v", "<leader>hs", function()
+  require("gitsigns").stage_hunk { vim.fn.line ".", vim.fn.line "v" }
+end, { desc = "Stage hunk" })
+map("n", "<leader>hr", function()
+  require("gitsigns").reset_hunk()
+end, { desc = "Reset hunk" })
+map("v", "<leader>hr", function()
+  require("gitsigns").reset_hunk { vim.fn.line ".", vim.fn.line "v" }
+end, { desc = "Reset hunk" })
+map("n", "<leader>hp", function()
+  require("gitsigns").preview_hunk()
+end, { desc = "Preview hunk" })
+map("n", "<leader>hb", function()
+  require("gitsigns").blame_line { full = true }
+end, { desc = "Blame line" })

@@ -22,6 +22,15 @@ return {
         return nil
       end
 
+      --use project .venv python if present, else system python
+      local function python_path()
+        local venv = vim.fn.getcwd() .. "/.venv/bin/python"
+        if vim.fn.executable(venv) == 1 then
+          return venv
+        end
+        return "python"
+      end
+
       require("neotest").setup {
 
         output = {
@@ -34,7 +43,7 @@ return {
 
           --TODO: Fix tests for python
           require "neotest-python" {
-            python = vim.fn.getcwd() .. "/.venv/bin/python",
+            python = python_path(),
           },
           require "neotest-jest" {
             jestCommand = "npm test --",

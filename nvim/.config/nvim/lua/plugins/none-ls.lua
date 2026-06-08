@@ -37,8 +37,6 @@ return {
               local enabled = utils.root_has_file(eslint_root_files)
               if not enabled then
                 notify("null-ls", "ESLint skipped — no config found", vim.log.levels.WARN)
-              else
-                notify("null-ls", "ESLint diagnostics enabled")
               end
               return enabled
             end,
@@ -51,8 +49,6 @@ return {
               local enabled = utils.root_has_file(eslint_root_files)
               if not enabled then
                 notify("null-ls", "ESLint code actions skipped", vim.log.levels.WARN)
-              else
-                notify("null-ls", "ESLint code actions enabled")
               end
               return enabled
             end,
@@ -95,8 +91,6 @@ return {
 
               if not enabled then
                 notify("null-ls", "luacheck skipped — no config found", vim.log.levels.WARN)
-              else
-                notify("null-ls", "luacheck diagnostics enabled")
               end
               return enabled
             end,

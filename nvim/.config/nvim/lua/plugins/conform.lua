@@ -2,6 +2,8 @@ return {
   --Formaters manager
   {
     "stevearc/conform.nvim",
+    event = { "BufWritePre" },
+    cmd = { "ConformInfo" },
     opts = {
       format_on_save = {
         lsp_fallback = true,

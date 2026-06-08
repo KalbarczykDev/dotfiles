@@ -15,6 +15,7 @@ o.splitbelow = true
 o.splitright = true
 o.timeoutlen = 400
 o.updatetime = 250
+o.scrolloff = 8
 
 --persist undo
 o.undofile = true
@@ -44,9 +45,7 @@ o.smartcase = true
 -- Disable swap
 o.swapfile = false
 
--- Spell check
-o.spell = true
-o.spelllang = "en_us"
+-- Spell check enabled per-filetype in autocmds.lua (prose only)
 
 -- Background
 o.background = "dark"

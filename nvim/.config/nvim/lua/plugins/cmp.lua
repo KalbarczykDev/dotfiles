@@ -1,6 +1,7 @@
 return { --Code completion
   {
     "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
     dependencies = {
       {
         "onsails/lspkind.nvim",
