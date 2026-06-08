@@ -2,6 +2,7 @@ return {
   --Package manager
   {
     "williamboman/mason.nvim",
+    event = "VeryLazy",
     config = function()
       require("mason").setup {
         PATH = "skip",

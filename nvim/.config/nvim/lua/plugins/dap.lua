@@ -2,6 +2,7 @@ return {
   --debugger
   {
     "mfussenegger/nvim-dap",
+    lazy = true,
     dependencies = {
       "nvim-neotest/nvim-nio",
       "theHamsta/nvim-dap-virtual-text",
