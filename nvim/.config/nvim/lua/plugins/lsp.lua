@@ -38,9 +38,16 @@ return {
         clangd = {
           cmd = { "clangd", "--background-index", "--clang-tidy" },
         }, --c/cpp
-        marksman = {
-          filetypes = { "markdown" },
-        }, --markdown
+        phpactor = {
+          init_options = {
+            -- inlay hints (off by default for perf); phpactor has no return-type hints
+            ["language_server_worse_reflection.inlay_hints.enable"] = true,
+            ["language_server_worse_reflection.inlay_hints.types"] = true, -- variable types
+            ["language_server_worse_reflection.inlay_hints.params"] = true, -- param names
+            -- diagnostics
+            ["language_server_worse_reflection.diagnostics.enable"] = true,
+          },
+        }, --php
         basedpyright = {
           settings = {
             basedpyright = {
@@ -82,7 +89,6 @@ return {
         "yamlls", --yaml
         "jsonls", --json
         "taplo", --toml
-        "marksman", --markdown
         "bashls", --shell
         "dockerls", --dockerfile
         "docker_compose_language_service", --docker compose

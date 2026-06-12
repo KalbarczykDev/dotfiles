@@ -43,6 +43,24 @@ return {
         c = { "clang-format" },
         cpp = { "clang-format" },
       },
+      formatters = {
+        php_cs_fixer = {
+          -- style follows a project ruleset if present, else PSR-12;
+          -- --using-cache=no stops the .php-cs-fixer.cache file in the project
+          args = function(_, ctx)
+            local cfg = vim.fs.find(
+              { ".php-cs-fixer.php", ".php-cs-fixer.dist.php" },
+              { upward = true, path = ctx.dirname }
+            )[1]
+            local args = { "fix", "--using-cache=no" }
+            table.insert(args, cfg and ("--config=" .. cfg) or "--rules=@PSR12")
+            table.insert(args, "$FILENAME")
+            return args
+          end,
+          -- don't refuse to run on an unsupported PHP version
+          env = { PHP_CS_FIXER_IGNORE_ENV = "1" },
+        },
+      },
     },
   },
 }

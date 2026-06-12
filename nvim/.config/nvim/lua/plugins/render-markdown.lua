@@ -9,15 +9,7 @@ return {
       require("render-markdown").setup {
         completions = { lsp = { enabled = true } },
         render_modes = { "n", "c" },
-        anti_conceal = {
-          enabled = true,
-          ignore = {
-            code_background = false,
-            sign = true,
-          },
-          above = 0,
-          below = 0,
-        },
+        anti_conceal = { enabled = false },
       }
     end,
   },

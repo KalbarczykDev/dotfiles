@@ -106,8 +106,6 @@ return {
               "taplo",
 
               --Markdown
-              --LSP
-              "marksman",
               --Linter:
               "markdownlint",
               --Formater:
