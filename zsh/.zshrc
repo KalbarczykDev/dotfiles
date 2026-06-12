@@ -1,9 +1,6 @@
 
 PROMPT='%F{cyan}%n%f %F{magenta}%~%f %F{yellow}›%f '
 
-#starship prompt
-eval "$(starship init zsh)"
-
 #homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 
